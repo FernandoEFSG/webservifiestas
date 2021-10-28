@@ -1,0 +1,123 @@
+
+ 
+   
+
+
+ <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-black" [containerInside]="true">
+
+
+  <mdb-navbar-brand>
+    <a class="navbar-brand" routerLink="/home">
+      <img class="img-logo" src="./assets/imgs/logo_servifiesta.png" alt="">
+    </a>
+  </mdb-navbar-brand>
+
+  
+  <links>
+
+   
+    <ul class="navbar-nav mr-auto ml-auto">
+      <li class="nav-item col-act" routerLinkActive="activo">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/accesorios">Accesorios</a>
+      </li>
+     
+      <li class="nav-item" routerLinkActive="activo">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/piñatas" >Piñatas</a>
+      </li>
+      <li class="nav-item" routerLinkActive="activo">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/sonido">Sonido</a>
+      </li>
+      <li class="nav-item" routerLinkActive="activo">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/salones">Salones</a>
+      </li>
+      <li class="nav-item" routerLinkActive="activo">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/inflables">Inflables</a>
+      </li>
+      <li class="nav-item" routerLinkActive="activo">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/coctelería">Coctelería</a>
+      </li>
+
+
+    </ul>
+   
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      
+      <li class="nav-item">
+        <a class="nav-link" (click)="inciarSesionModal()" >
+          <img src="./assets/imgs/user2.svg" width="20" alt="">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+            <img src="./assets/imgs/carro.svg" width="20" alt="" mdbDropdownToggle>
+            <span class="badge badge-pill bg-danger">{{cuantos}}</span>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <a class="dropdown-item" (click)="productos()" >Productos</a>
+              <a class="dropdown-item"  (click)="servicios()"  >Apartados</a>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </links> 
+
+  <!-- Collapsible content -->
+
+  </mdb-navbar> 
+<!--/.Navbar-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./assets/imgs/login.svg" class="icon-login" alt="Login">
+        <h1 class="text-center font-300">Iniciar sesión</h1>
+
+        <form [formGroup]="form">
+          <input type="email" formControlName="correo"  class="input-login" placeholder="Correo electrónico">
+          <input type="password"  formControlName="password" class="input-login" placeholder="Contraseña">
+          <a routerLink="/recovery" class="text-center mt-1 d-block" data-bs-dismiss="modal">Olvide mi contraseña</a>
+
+          <div class="w-100 text-center mt-3">
+            <button (click)="login()" [disabled]="form.invalid"  type="button" class="btn-primary btn-block">Iniciar</button>
+          </div>
+          <div class="w-100 text-center mt-3">
+            <a class="btn-light-danger w-100 d-block" data-bs-dismiss="modal" routerLink="/registro">Crear mi cuenta</a>
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cerrar session -->
+<div class="modal fade" id="cerrarSesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cerrar Sessión</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="w-100 text-center mt-3"  *ngIf="isdisable == false">
+          <a class="btn-light-danger w-100 d-block"  data-bs-dismiss="modal" (click)="cerrar()">cerrar sessión</a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+

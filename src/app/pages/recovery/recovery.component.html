@@ -1,0 +1,36 @@
+<!-- Formulario -->
+<section class="form-login" id="bg-crear">
+    <div class="bg-crear ">
+        <h1 class="title-hero">RECUPERAR TU CONTRASEÑA</h1>
+    </div>
+    
+    <form class="form-submit">
+        <div class="row">
+            <div class="col">
+                <div>
+                   <p class="p1">¿Olvidate tu contraseña?</p> 
+                </div>
+                <div>
+                    <p class="p2">¡No te preocupes, entendemos la situacion en la que
+                        te encuentras, para reestablecer tu contraseña introduce tus datos
+                        en el siguiente formulario.
+                    </p>
+                </div>
+                <div class="form-group"> 
+                    <form [formGroup]="form">
+                        <div>
+                    <input type="text" formControlName="nombre" class="form-control" id="nombre" placeholder="Introduce tu nombre completo" required>    
+                        </div>
+                    <input type="email" formControlName="correo" class="form-control" id="telefono" placeholder="Coloca tu correo email" required>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="div-send">
+            <div class="col">
+                <button type="button" (click)="recuperaPassword()" id="send" name="send" class="btn btn-info">CONFIRMAR</button>
+            </div>
+        </div>
+    </form>
+</section>
+<!-- Fin formulario -->

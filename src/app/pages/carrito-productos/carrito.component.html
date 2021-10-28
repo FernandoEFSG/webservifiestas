@@ -1,0 +1,263 @@
+
+<section id="sec-car">
+    <article class="container paddingtop" >
+        <div class="row head">
+            <div class="col-6 tit-prod" id="title">Tus productos</div>
+            <div class="col-3 cantidad" id="title">Cantidad</div>
+            <div class="col-3 text-center" id="title3">Subtotal</div>
+        </div>
+			<div class="row align-items-center productos bg-carrito" *ngFor="let item of listaprodutos; index as i">
+				<!-- Listado de Items en el carrito -->
+				<!-- descripcion del producto -->
+				<div class="col-md-5 col-6" id="div-prod">
+					<div class="producto">
+						<img [src]="urlimg+item.imagen" class="img-producto" alt="" srcset="" />
+						<div style="display: flex; flex-direction: column" id="desc">
+							<h5 class="robo-thin bold">{{item.nombre }}</h5> <!-- Nombre producto -->
+							<span style="font-size: 15px;">Precio MXN {{item.precio_venta | currency}} </span> <!-- Precio -->
+							<input  type="hidden" >
+							<!--
+								<a class="eliminar"><span style="font-size: 20px;"></span></a>
+							-->
+							<a  (click)="delete(i)"  class="eliminar"> Eliminar</a>
+							<!-- Boton de eliminar -->
+						</div>
+					</div>
+				</div>
+				<!-- Cantidad -->
+				<div class="col-md-3 col-3" id="numb">
+					<input (change)="selectCantidad(item.id, $event)"   [value]="item.cuanty" class="inputCustom" type="number" />
+				</div>
+				<!-- Subtotal -->
+				<div class="col-md-3 col-3 text-center" id="precio">
+					<span class="bold" style="font-size: 15px;">MXN ${{item.precio_venta * item.cuanty}}</span> <!-- Subtotal de la cantidad de productos iguales -->
+					<!-- <input type="hidden" value=""
+					id="subtotal_{{cart.id_carrito}}" name="subtotal_{{cart.id_carrito}}"
+					[ngModel]="cntItem"> -->
+					<input type="hidden" value=""
+					id="subtotal" name="subtotal"
+					[value]="item.precio_venta">
+				</div>
+			</div>
+
+			<div class="row borde" >
+				<div class="col-12 mt-2" >
+					<div class="row mt-1">
+						<div class="col-6 robo-thin bold">Subtotal</div>
+						<div class="col-6" id="sub-2">MXN {{subtotal | currency }}</div> <!-- Subtotal global -->
+					</div>
+	
+					<div class="row mt-1">
+						<div class="col-6 robo-thin bold">Total</div>
+						<div class="col-6 text-right" id="total">MXN  {{subtotal | currency  }}</div> <!-- Total global -->
+					</div>
+	
+					<div class="row mb-3">
+						<div class="col-md-6 col-12 offset-md-6 mt-2" id="btns">
+							<div class="row" >
+								
+								<div class="col-6">
+									<button type="button" (click)="inciarcompra()" class="btn  btn-hero"  fragment="client-info">
+										Iniciar compra
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        
+    </article>
+</section>
+<!-- <p id="client-info"></p> -->
+ <!-- Información cliente -->
+ <!-- <section class="client-info" >
+	<form  [formGroup]="form"   id="datos-form">
+		<h3 class="text-center " id="h3-t">Datos de envío</h3>
+	  <div class="form-group">
+		<div class="row">
+		  <div class="col">
+			<label for="nombre">*Nombre completo</label>
+			<input id="nombre" name="nombre" type="text" class="form-control" formControlName="nombre" required>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="numeroTel">*Número de teléfono</label>
+			<input id="numeroTel" name="numeroTel" type="tel" class="form-control" formControlName="telefono" required>
+		  </div>
+		  <div class="col">
+			<label for="correo">*Correo electrónico</label>
+			<input id="correo" name="correo" type="email" class="form-control" formControlName="correo" required>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="direccion">*Calle y Número</label>
+			<input id="direccion" name="direccion" type="text" class="form-control" formControlName="calle" required>
+		  </div>
+		  <div class="col">
+			<label for="">Número Interior</label>
+			<input id="numeroInt" name="numeroInt" type="text" class="form-control" formControlName="num_int">
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="colonia">*Colonia</label>
+			<input id="colonia" name="colonia" type="text" class="form-control" formControlName="colonia" required>
+		  </div>
+		  <div class="col">
+			<label for="colonia">*Referencias (Entre calles)</label>
+			<input id="referencias" name="referencias" type="text" class="form-control" formControlName="entre_calles" required>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="zip">*Código postal</label>
+			<input id="zip" name="zip" type="text" pattern="[0-9]*" class="form-control" formControlName="cp" required>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="estado">*Estado</label> -->
+			<!-- <input id="estado" name="estado" type="text" class="form-control" formControlName="estado"> -->
+			<!-- <select id="estado" name="estado" type="text" class="form-control" formControlName="estado" required>
+			  <option value="no">Seleccione uno...</option>
+			  <option value="Aguascalientes">Aguascalientes</option>
+			  <option value="Baja California">Baja California</option>
+			  <option value="Baja California Sur">Baja California Sur</option>
+			  <option value="Campeche">Campeche</option>
+			  <option value="Chiapas">Chiapas</option>
+			  <option value="Chihuahua">Chihuahua</option>
+			  <option value="CDMX">Ciudad de México</option>
+			  <option value="Coahuila">Coahuila</option>
+			  <option value="Colima">Colima</option>
+			  <option value="Durango">Durango</option>
+			  <option value="Estado de México">Estado de México</option>
+			  <option value="Guanajuato">Guanajuato</option>
+			  <option value="Guerrero">Guerrero</option>
+			  <option value="Hidalgo">Hidalgo</option>
+			  <option value="Jalisco">Jalisco</option>
+			  <option value="Michoacán">Michoacán</option>
+			  <option value="Morelos">Morelos</option>
+			  <option value="Nayarit">Nayarit</option>
+			  <option value="Nuevo León">Nuevo León</option>
+			  <option value="Oaxaca">Oaxaca</option>
+			  <option value="Puebla">Puebla</option>
+			  <option value="Querétaro">Querétaro</option>
+			  <option value="Quintana Roo">Quintana Roo</option>
+			  <option value="San Luis Potosí">San Luis Potosí</option>
+			  <option value="Sinaloa">Sinaloa</option>
+			  <option value="Sonora">Sonora</option>
+			  <option value="Tabasco">Tabasco</option>
+			  <option value="Tamaulipas">Tamaulipas</option>
+			  <option value="Tlaxcala">Tlaxcala</option>
+			  <option value="Veracruz">Veracruz</option>
+			  <option value="Yucatán">Yucatán</option>
+			  <option value="Zacatecas">Zacatecas</option>
+			</select>
+		  </div>
+		  <div class="col">
+			<label for="">*Ciudad</label>
+			<input id="ciudad" name="ciudad" type="text" class="form-control" formControlName="ciudad" required>
+		  </div>
+		</div>
+	  </div>
+	</form>
+	<div class="btn-save-container">
+		<button (click)="datosUser()"   class="btn-hero" id="guardar" name="guardar" type="submit" routerLink="/carrito-prod"  [fragment]="fragmento" >Siguiente Paso</button>
+	  </div>
+  </section>   -->
+  <!-- Fin información cliente -->
+
+  <!-- <div id="sec-env"></div> -->
+<!-- METODOS DE ENVÍO -->
+<!-- <section   class="shipping">
+  <h3 class="text-center">Métodos de envío</h3>
+  <div class="container2">
+	<div class="card mt-3 container" *ngFor="let l of  lista_shipment; let i = index"
+	id="metodo-{{i}}" (click)="metodo_seleccionado(i,lista_shipment.length,l)">
+	<div class="card-title">
+	  {{l.provider}}
+	</div>
+	<div class="card-body">
+	  <label class="form-check-label">
+		<h6>{{l.proveedor}} ({{l.service}}) - $ {{l.precio}} MXN</h6>
+		Duración: {{l.duracion}} <br>
+		<p>Total a pagar: $ {{l.precio + subtotal}} MXN</p>
+	  </label>
+	</div>
+  </div>
+  </div>
+  
+</section> -->
+
+
+<!-- METODOS DE ENVIOOOOOO /-->
+
+<!-- <p id="sec-pag"></p> -->
+<!-- Pagos -->
+<!-- <section  [hidden]="isdisablepago" class="payment">
+	<h1 class="text-center">Selecciona la forma de pago</h1>
+	
+	  <div class="row mb-3">
+		<div class="col-md-6 col-12 offset-md-6 mt-2" id="btns">
+			<div class="row" >
+				<div class="col-6" id="btn-1">
+					<button class="btn " type="submit"> <img id="mercado" src="./assets/imgs/mercado.jpg" > </button>
+				</div>
+				<div class="col-6" id="btn-2">
+					<button class="btn " type="submit"> <img id="paypal" src="./assets/imgs/paypal.png" > </button>
+				</div>
+			</div>
+		</div>
+	</div>
+  </section> -->
+   
+   <!-- <div class="credit-car">
+	   <div>
+		  <div #carInfo>
+		  </div>
+		   <div class="error" *ngIf="cardError" >
+              {{cardError}}
+		   </div>
+	   </div>
+	   <button class="pagar">
+		   Pagar
+	   </button>
+   </div> -->
+
+   <!-- <div class="credit-car">
+	<h2 class="mt-5 mb-4">METODOS DE PAGOS</h2>
+	<div class="col-md-5 mb-2">
+	  <button (click)="pagar()" class="btn btn-primary btn-block">
+		 <span>Stripe</span>
+	  </button>
+	</div>
+
+	
+  </div> -->
+
+
+
+ <!--  genesis#1997cisco  -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Atención</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  <div class="w-100 text-center mt-3">
+             <p>La compra minima es de $20 pesos, para continuar con la compra agrega más productos al carrito</p>
+			<!-- <a class="btn-light-danger w-100 d-block"  data-bs-dismiss="modal" (click)="cerrar()">cerrar sessión</a> -->
+		  </div>
+		</div>
+		<div class="modal-footer">
+		       <!-- <button type="button" class="btn btn-secondary" aria-label="Close" data-dismiss="modal">Close</button> -->
+        <button (click)="comprarmas()" ype="button" class="btn btn-primary">Agregar más productos</button>
+		</div>
+	  </div>
+	</div>
+  </div>

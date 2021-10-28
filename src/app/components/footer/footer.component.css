@@ -1,0 +1,93 @@
+
+.bg-footer {
+	background-color: #313131;
+}
+ 
+.btn-footer {
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 500 !important;
+	padding-top: .8em;
+}
+.btn-footer:hover{
+	-webkit-text-decoration: underline white;
+	        text-decoration: underline white;
+}
+.btn-footer {
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	padding-top: .8em;
+}
+
+.input-footer {
+	width: 100%;
+	height: 60px;
+	background-color: #FFC300;
+	border: none;
+	margin-right: 0px;
+}
+
+.send-mail{
+	-webkit-filter: invert(100%);
+	        filter: invert(100%);
+	width: 14px;
+}
+.btn-face, .btn-whats {
+	-webkit-filter: invert(100%);
+	        filter: invert(100%);
+	width: 100%;
+	height: 100%;
+}
+
+.btn-face:hover, .btn-whats:hover {
+	-webkit-filter: invert(0%);
+	        filter: invert(0%);
+	width: 100%;
+	height: 100%;
+}
+.send-button2:hover{
+background-color: white;
+}
+.send-button {
+	background-color: #0A5FD6;
+	border: none;
+	height: 60px;
+	width: 60px;
+	margin-left: 0px;
+}
+.send-button2 {
+	background-color: #313131;
+	border-radius: 50%;
+	border: none;
+	height: 60px;
+	width: 60px;
+	margin-left: 0px;
+	margin-top: 15px;
+}
+
+@media screen and (max-width: 500px) {
+
+	
+	.redes {
+		text-align: center;
+	}	
+	h3 {
+		font-size: 12px;
+	}
+	.btn-footer{
+		font-size: 10px;
+	}
+	#news{
+		font-size: 10px;
+	}
+	.send-button2 {
+		height: 40px;
+		width: 40px;
+	}
+	.input-footer, .send-button{
+		height: 40px;
+	}
+}

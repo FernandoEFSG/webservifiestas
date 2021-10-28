@@ -1,0 +1,139 @@
+<!-- Hero 
+<section class="fondo-salones">
+	<article class="container">
+		<div class="row d-flex align-items-center" id="titulo">
+			<div class="col-12 col-md-6 ">
+				<h1 class="title-hero">APARTA TU SERVICIO AQUÍ</h1>
+			</div>
+		</div>
+	</article>
+</section>
+ -->
+ <!-- Formulario --> 
+ <section class="form-login" id="bg-crear">
+	<article class="container">
+		<form [formGroup]="form" class="form-submit">
+			<div class="row">
+				<div class="col">
+					<div>
+						<h3 class="text-center " id="h3-t">Ingresa tus datos</h3>
+					</div>
+					<div class="form-group">
+						<div id="input">
+							<input type="text"  formControlName="cliente"   class="form-control" id="nombre" placeholder="Nombre completo" required>    
+						</div>
+                         
+						<div id="input">
+							<input type="number"  formControlName="telefono"   class="form-control" id="nombre" placeholder="Número de telefono" required>    
+						</div>
+						<p id="p-form"> Fecha de evento:</p> 
+						<input  formControlName="fecha_evento"   type="date" id="start" name="trip-start">
+						<div id="input">
+							<p id="p-form">Hora de evento:</p>   
+							<input type="time"  formControlName="hora_evento" class="form-control" id="nombre" placeholder="Hora de evento" required>  
+						</div>
+						<div id="input">
+							<input type="text"  formControlName="lugar_evento" class="form-control" id="nombre" placeholder="Lugar de evento" required>    
+						</div>
+						<div id="input">
+							<p id="p-form">Ubicación:</p>   
+							<input type="url" formControlName="google_maps"  class="form-control" id="nombre" placeholder="Pega la ubicación del evento" required>  
+						</div>
+						<div id="input">
+							<p id="p-form">Seleccionar Zona:</p>   
+							  <select formControlName="zona_evento"  class="form-control" id="nombre">
+								  <option disabled>Seleccione una zona</option>
+								  <option value="uriangato">uriangato</option>
+								  <option value="moroleon">moroleon</option>
+								  <option value="Yuriria">Yuriria</option>
+							  </select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="div-send">
+				<div class="col" id="btn-cot">
+					<button [disabled]="form.invalid"  (click)="guardarDatos()"  type="button" id="send" name="send" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#apartarModal">APARTAR</button>
+				</div>
+			</div>
+		</form>
+	</article>
+</section>
+<!-- Fin formulario -->
+<!-- Modal -->
+<div class="modal fade" id="apartarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  <h3 class="text-center">Indica donde deseas hacer el pago de apartado</h3>
+		  <form action="">
+			<div class="w-100 text-center mt-3">
+				<a data-bs-toggle="modal" (click)="formapago('web')"  data-bs-target="#msjPago" data-bs-dismiss="modal"><button class="btn-primary btn-hero">Aquí</button></a>
+			</div>
+			<div class="w-100 text-center mt-3">
+				<a  data-bs-toggle="modal"  (click)="formapago('sucursal')"  data-bs-target="#msjModal" data-bs-dismiss="modal"><button class="btn-primary btn-hero-outline">Sucursal</button></a>
+			</div>
+		  </form>
+		</div>
+	  </div>
+	</div>
+  </div>
+<!--			MODAL			-->
+<!-- Modal -->
+<div class="modal fade" id="msjModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body text-center">
+			<img class="icon-succ"   src="./assets/imgs/checked.svg" alt="Carrito compras">
+		  <h3 class="text-center">Recuerda que tienes como fecha máxima una semana para llevar el anticipo a tu sucursal</h3>
+		</div>
+	  </div>
+	</div>
+  </div>
+<!--			MODAL			-->
+
+<!-- Modal -->
+<div class="modal fade" id="msjPago" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+			<h1 class="text-center">Forma de pago</h1>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+	  <div class="row mb-3">
+		<div class="col-md-6 col-12 offset-md-6 mt-2" id="btns">
+			<div class="row" >
+				<!-- <div class="col-6" id="btn-1">
+					<button class="btn " type="submit"> <img id="mercado" src="./assets/imgs/mercado.jpg" > </button>
+				</div> -->
+				<div class="col-6" id="btn-2">
+					<div class="credit-car">
+	<!-- <h2 class="mt-5 mb-4">METODOS DE PAGOS</h2> -->
+	<div class="col-md-5 mb-2">
+	  <button (click)="makePayment()" class="btn">
+		 Pagar
+	  </button>
+	</div>
+  </div> 
+	</div>
+			</div>
+		</div>
+	</div>
+	  </div>
+	</div>
+  </div>
+<!--			MODAL			-->
+<!-- <div class="credit-car">
+	<h2 class="mt-5 mb-4">METODOS DE PAGOS</h2>
+	<div class="col-md-5 mb-2">
+	  <button  class="btn btn-primary btn-block">
+		 <span>Stripe</span>
+	  </button>
+	</div>
+  </div> -->

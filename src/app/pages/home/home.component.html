@@ -1,0 +1,371 @@
+<!-- Hero -->
+<section class="bg-black py-5">
+	<article class="container">
+		<div class="row d-flex align-items-center">
+			<div class="col-12 col-md-6">
+				<h1 class="title-hero text-center">ENCUENTRA TODO PARA TU FIESTA</h1>
+				<p class="text-hero text-center" id="text-hero">
+					En <span class="font-900">Servifiestas</span> queremos ser parte de los grandes momentos de tu familia.
+				</p>
+				<form [formGroup]="formSerch"  class="d-flex shadow" id="search">
+						<input formControlName="busqueda" class="form-control bg-yellow" name="buscar" type="search" placeholder="Buscar servicios..." aria-label="Search">
+						<button (click)="buscar()" class="btn btn-primary btn-bus" type="submit"> <img class="icon-search" src="./assets/imgs/search.svg" alt="Search"> </button>
+				</form>
+				<div id="info" class="text-center">
+					<p  id="txt-w">Estamos ubicados en:</p>
+					<a href="https://goo.gl/maps/RXkpNMDcrkEe6LUU9" target="_blank">
+						<p id="txt-w"><img src="./assets/imgs/ubicaciones.svg" alt="ubicaciones" class="info" >
+							Calle Pipila #90c de Uriangato, Gto.
+						</p>
+					</a>
+					<a class="send-button1" id="txt-w" href="https://api.whatsapp.com/send?phone=524456883155" target="_blank">
+						<img src="./assets/imgs/whatsapp.svg" alt="whatsapp" class="btn-whats" > 4456883155
+					</a>
+					<a class="send-button2" id="txt-w" href="https://api.whatsapp.com/send?phone=524454621469" target="_blank">
+						<img src="./assets/imgs/whatsapp.svg" alt="whatsapp" class="btn-whats" > 4454621469
+					</a>
+				</div>
+			</div>
+			<div class="col-12 col-md-6" id="div-img">
+				<img id="img-h"src="./assets/imgs/fondo-globos.png" class="w-100 animate__animated animate__fadeIn animate__delay-2s" alt="Imagen Hero">
+			</div>
+		</div>
+	</article>
+</section>
+<!-- /Hero -->
+ 
+<!-- SERVCIOS BUSQUEDA -->
+<section  *ngIf="flag == true"  class="py-5" id="bg-accesorios">
+	<article class="container">
+		<div class="row">
+			<div class="col-12 text-center" id="text-center">
+				<!--
+					<h1 class="title-bold">CATEGORÍAS</h1>
+				-->
+				<span class="texto-relleno" >
+					Conoce la variedad de productos que tenemos para ti
+				</span>
+			</div>
+		</div>
+		<!-- <div class="text-center filters-toolbar__item-wrapper">
+			<div class="filters-toolbar__item-child">
+				<label for="" id="lbl">Ordenar por:</label>
+				<select    name="select" id="combo">
+					<option value="value1">Destacados</option>
+					<option value="ASC" selected>Alfabéticamente, A-Z</option>
+					<option value="DESC">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+		</div> -->
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let item of servicios">
+				<div class="p-0 card-hover-line h-100" id="card-pa">
+					<div class="bg-light container-img-light img-card">
+						<!-- <img src="{{accesorio.img}}" alt="{{accesorio.img}}" class="w-100" id="img"> -->
+						<img [src]="urlimgserv+item.imagen" [alt]="urlimgserv+item.imagen" class="w-100" id="img">
+					</div>
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400" id="acc-desc">
+								<!-- {{accesorio.servicio}} -->
+								<!-- {{item.nombre}} -->
+								     {{item.servicio}}
+							</p>
+ 						</div> 
+					</div>
+					<div class="row mt-1 p-3 card-name">
+						<div class="col-12 p-1" id="card-name">
+							<h4 class="font-700" id="categ">
+                                <!-- ${{accesorio.precio_venta}} -->
+                                 <!-- {{item.precio_venta}} -->
+								  {{item.precio_venta | currency }}
+                            </h4> 
+						</div>
+					</div>
+					<div class="row p-1 card-mas" id="card-btn">
+						<div class="col-12 text-center" id="ver-mas">
+							<button (click)="agregar(item, 'default')" class="btn-add">AGREGAR AL CARRITO</button>
+						</div>
+						<div class="col-12 text-center" id="ver-mas">
+							<button (click)="detallesServicios(item)" class="btn-hero-outline"data-bs-toggle="modal" data-bs-target="#modal-product-images">Ver detalles</button>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+
+<!-- Info 1 -->
+<section *ngIf="flag == false" class="py-5">
+	<article class="container">
+		<div class="row h-100 d-flex align-items-center ml-0 mr-0">
+			<div class="col-12 col-md-6 llena">
+				<h1 class="title-bold text-center">ARMA TU PAQUETE.</h1>
+				<p>
+						En <span class="marcado">Servifiestas</span> contamos con
+						todo lo necesario para que hagas de tu fiesta algo inolvidable
+				</p>
+				<button class="btn-light-danger shadow" routerLink="/personalizado">Armar mi paquete</button>
+			</div>
+
+			<div class="col-12 col-md-6 bg-sticky" id="bg-amix"></div>
+		</div>
+	</article>  
+</section>
+<!--/Info 1 -->
+
+<!-- Beneficios -->
+<section class="bg-beneficios">
+	<article class="container">
+		<div class="row beneficios ml-0 mr-0">
+			<div class="col-6 col-md-4 text-center mt-5 ">
+				<img class="img-beneficios" src="./assets/imgs/felicidad.png" alt="Clientes felices">
+				<span class="texto-cantidad">+3000</span>
+				<span class="texto-name">Clientes felices</span>
+			</div>
+
+			<div class="col-6 col-md-4 text-center mt-5">
+				<img class="img-beneficios" src="./assets/imgs/productividad.png" alt="Servicios">
+				<span class="texto-cantidad">+35</span>
+				<span class="texto-name">Servicios</span>
+			</div>
+
+			<div class="col-6 col-md-4 text-center mt-5 offset-md-0 offset-3">
+				<img class="img-beneficios" src="./assets/imgs/nuevo-producto.png" alt="Articulos">
+				<span class="texto-cantidad">+3000</span>
+				<span class="texto-name">Articulos</span>
+			</div>
+		</div>
+	</article>
+</section>
+<!-- Beneficios -->
+
+
+<!-- Aprovecha nuestras ofertas -->
+<section>
+	<article class="container">
+		<div class="row py-5 ml-0 mr-0">
+			<div class="col-12 text-center aparecer">
+				<h1 class="title-banner tit-ser">¡ESTAMOS PARA SERVIRTE, EN CASO DE QUE TENGAS ALGUNA DUDA!</h1>
+				<div class="sub">______</div>
+			</div>
+
+			<div class="col-12 col-md-4 offset-0 offset-md-4 mt-5 aqui text-center">
+				<a href="https://api.whatsapp.com/send?phone=524454621469" target="_blank">
+					<button class="btn-hero-outline btn-wid">
+						Contactar
+					</button>
+				</a>
+			</div>
+		</div>
+	</article>
+</section>
+<!-- Aprovecha nuestras ofertas -->
+
+
+<!-- Lo más Vendido -->
+<section class="bg-black py-5">
+	<article class="container">
+		<div class="row ml-0 mr-0">
+			<div class="col-12 text-center">
+				<h1 class="text-light title-hero">LO MÁS VENDIDO</h1>
+				<span class="texto-relleno text-light">
+					A continuación te mostramos los productos más vendidos durante la semana
+				</span>
+			</div> 
+		</div>
+		<div class="row ml-0 mr-0">
+			<div class="col-6 col-md-3 mt-3 p-2 card-hover" *ngFor="let item of  filter()">
+				<div class="bg-light container-img-light">
+					<img [src]="urlimg+item.imagen" height="" [alt]="urlimg+item.imagen" class="w-100 obj-fit">
+				</div>
+				 
+				<div class="row text-center mt-3">
+					
+					<div class="col-12 p-1">
+						<span class="price">${{item.precio_venta}}</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 my-5">
+						<button  (click)="addCarrito(item,'default')" class="btn-buy">Comprar ahora</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+<!-- /Lo más Vendido -->
+
+
+
+
+<!-- CATEGPRÍAS -->
+<section class="py-5" id="categorias">
+	<article class="container">
+		<div class="row ml-0 mr-0">
+			<div class="col-12 text-center">
+				<h1 class="title-bold">CATEGORÍAS</h1>
+				<span class="texto-relleno">
+					Conoce la variedad de productos y servicios que tenemos para ti
+				</span>
+			</div>
+		</div>
+
+		<div class="row ml-0 mr-0">
+			<div class="col-6 col-md-4 mt-4 " *ngFor="let categoria of categorias">
+				<div class="p-0 card-hover-line h-100 card-body">
+					<div class="bg-light container-img-light img-card">
+						<img src="{{categoria.img}}" alt="{{categoria.img}}" class="w-100">
+					</div>
+					<div class="row mt-1 p-3 card-name">
+						<div class="col-12 p-1">
+							<h4 class="font-700" id="categ">{{categoria.name}}</h4>
+						</div>
+					</div>
+					<div class="row p-1 desc-1">
+						<div class="col-12 card-desc">
+							<p class="text-center font-300">
+								{{categoria.desc}}
+							</p>
+						</div>
+					</div>
+							<div class="text-center mb-mt">
+								<button routerLink={{categoria.ruta}} class="align-self-end btn-hero-outline">VER MÁS</button>
+						
+							</div>
+				</div>
+			</div>
+		</div>
+		
+	</article>
+</section>
+<!-- /CATEGPRÍAS -->
+<!-- contacto-->
+<section class="py-5" name="contacto" id="contacto">
+	<article class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h1 class="title-bold">DUDAS Y COMENTARIOS</h1>
+			</div>
+		</div>
+ 
+		<div class="row d-flex align-items-center" id="form">
+			<div class="col-12 col-md-4 p-3" id="con-con">
+				<img id="img-contacto" src="./assets/imgs/contacto.png" class="w-100" alt="Contacto">
+			</div>
+
+			<div class="col-12 col-md-8 p-3">
+				<div class="row">
+					<form [formGroup]="form"> 
+					<div class="col-12 col-md-6"> 
+						<input type="email"  formControlName="correo" class="input-blue" placeholder="Email">
+						<input type="text" formControlName="nombre" class="input-blue" placeholder="Nombre completo">
+						<input type="text"formControlName="number"  class="input-blue" placeholder="Número telefónico">
+						<input type="text"formControlName="ciudad"  class="input-blue" placeholder="Ciudad">
+						<input type="text"formControlName="estado"  class="input-blue" placeholder="Estado">
+					</div>
+					<div class="col-12 col-md-6 msj">
+						<textarea formControlName="mensaje" class="input-blue2" placeholder="Mensaje"></textarea>
+					</div>
+				</form>	
+				</div>
+			</div> 
+				<button  [disabled]="form.invalid" (click)="enviaremial()"   class="btn-light-danger shadow" id="btn-msj">Enviar mensaje</button>
+		</div>
+	</article>
+</section>
+<!-- /Contacto -->
+<!-- <div class="modal fade" id="modal-product-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="staticBackdropLabel">Nombre</h4>
+                <button id="btn-x" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <article id="imagenes-producto">
+                    <div id="slider">
+                        <div class="bg-container">
+                            <img src="{{urlimg+servicio.img}}" alt="{{urlimg+servicio.img}}"
+                                class="bg">
+                        </div>
+                        <div class="product-info">
+                            
+                            <div id="producto-opciones">
+                                <h5 class="text-center" id="detail">Detalles del producto</h5> <br>
+                                <p id="txt-w">PRECIO:</p><p class="text-center">Precio Ventas</p>
+                                <div id="producto-opciones-tallas-contenedor">
+                                    <div id="producto-opciones-tallas">
+										<P id="txt-w">Descripcion:</P>
+                                        <p class="text-center">Servicios</p>
+                                    </div>
+                                </div>
+                                <div id="producto-opciones-piezas-contenedor">
+                                    <p id="txt-w">Número de piezas:</p>
+                                    <form >
+                                        <input type="number" min="1" value="1" formControlName="cantidad" id="number">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#msjCarrito" >Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="modal fade" id="modal-product-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="staticBackdropLabel">{{servicio.servicio}}</h4>
+                <button id="btn-x" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <article id="imagenes-producto">
+                    <div id="slider">
+                        <div class="bg-container">
+
+							<div  [innerHTML]="sanitizer.bypassSecurityTrustHtml(video)"></div>
+
+                            <img *ngIf="video == ''" [src]="urlimgserv+servicio.img" alt="imagen"
+                                class="bg">
+                        </div>
+                        <div class="product-info">
+                            
+                            <div id="producto-opciones">
+                                <h5 class="text-center" id="detail">Detalles del producto</h5> <br>
+                                <p id="txt-bla">PRECIO:</p><p class="text-center">{{servicio.precio_venta }}</p>
+                                <div id="producto-opciones-tallas-contenedor">
+                                    <div id="producto-opciones-tallas">
+										<P id="txt-bla">Descripcion:</P>
+                                        <p class="text-center">{{servicio.descripcion  }}</p>
+                                    </div>
+                                </div>
+                                <!-- <div id="producto-opciones-piezas-contenedor">
+                                    <p id="txt-w">Número de piezas:</p>
+                                    <form >
+                                        <input type="number" min="1" value="1" formControlName="cantidad" id="number">
+                                    </form>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" (click)="agregar(servicio, 'default')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#msjCarrito" >Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+

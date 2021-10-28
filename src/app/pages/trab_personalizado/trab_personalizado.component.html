@@ -1,0 +1,504 @@
+<!-- Hero -->
+<section class="bg-globos">
+	<article class="container">
+		<div class="row d-flex align-items-center">
+			<div class="title-hero2">ARMA TU PAQUETE</div>
+		</div>
+	</article>
+</section>
+
+<!-- /Hero -->
+
+
+<!-- Info 1 -->
+<section class="py-5 img-confeti vendor">
+	<article class="container">
+		<div class="row h-100 d-flex align-items-center">
+			<div class="col-12 col-md-6">
+				<h1 class="title-bold">Para esa gran ocasión el detalle perfecto.</h1>
+				<br>
+				<p class="p-vend">Personaliza tus accesorios de la manera más profesional solo en</p>
+				<!-- <p class="p-vend"></p> -->
+				<p ><span class="marcado" >SERVIFIESTAS</span> </p>
+				<a href="https://api.whatsapp.com/send?phone=524454621469" target="_blank">
+					<button class="btn-contacto shadow" >
+						Contactar al vendedor
+					</button>
+				</a>
+				
+			</div>
+
+			<div class="col-12 col-md-6" id="bg-globos2" >
+				<img src="./assets/imgs/perzo.png" alt="globos">
+			</div>
+		</div>
+	</article>
+</section>
+<!--/Info 1 -->
+
+
+
+
+ 
+<!-- ACCESORIOS -->
+<section class="py-5 bg-accesorios">
+	<article class="container">
+		<div class="row ml-0 mr-0">
+			<!--
+			<h1 class="title-bold text-center">Selecciona tus accesorios</h1>
+			-->
+			<div class="col-12 text-center" id="text-center">
+				<!--
+					<h1 class="title-bold">CATEGORÍAS</h1>
+				-->
+				<span class="texto-relleno" >
+					<h2 id="sub-title">ACCESORIOS</h2>
+					Conoce la variedad de accesorios que tenemos para ti
+				</span>
+			</div>
+		</div>
+		<!--
+		<div class="text-center filters-toolbar__item-wrapper">
+			<div class="filters-toolbar__item-child">
+				<label for="" id="lbl">Ordenar por:</label>
+				<select name="select" id="combo">
+					<option value="value1">Destacados</option>
+					<option value="value2" selected>Alfabéticamente, A-Z</option>
+					<option value="value3">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+		</div>
+		-->
+		<div class="row ml-0 mr-0">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let accesorio of accesorios">
+				<div class="p-0 card-hover-line h-100" id="card-co">
+					<div class="bg-light container-img-light img-card">
+						<img [src]="urlimgserv+accesorio.imagen" alt="" class="w-100" id="img">
+					</div>
+					
+					
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400" id="acc-desc"> 
+								{{accesorio.servicio}}
+							</p>
+ 						</div> 
+					</div>
+					<div class="row mt-1 p-3 card-name">
+						<div class="col-12 p-1" id="card-name">
+							<h4 class="font-700" id="categ">${{accesorio.precio_venta}}</h4>
+						</div>
+					</div>
+					<div class="row p-1 card-mas" id="card-btn">
+						<div class="col-12 text-center" id="ver-mas">
+							<button class="btn-hero" (click)="agregar(accesorio, 'default')">Agregar al carrito</button>
+						</div>
+						
+						<div class="col-12 text-center" id="ver-mas">
+							<!-- <button class="btn-hero-outline" data-bs-toggle="modal" data-bs-target="#modal-product-images">Ver detalles</button> -->
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+<!-- /ACCESORIOS -->
+
+<!-- Productos -->
+<section class="py-5 bg-accesorios">
+	<article class="container">
+		<div class="row ml-0 mr-0">
+			<!--
+			<h1 class="title-bold text-center">Selecciona tus accesorios</h1>
+			-->
+			<div class="col-12 text-center" id="text-center">
+				<!--
+					<h1 class="title-bold">CATEGORÍAS</h1>
+				-->
+				<span class="texto-relleno" >
+					<h2 id="sub-title">Productos</h2>
+					Conoce la variedad de productos que tenemos para ti
+				</span>
+			</div>
+		</div>
+		<!--
+		<div class="text-center filters-toolbar__item-wrapper">
+			<div class="filters-toolbar__item-child">
+				<label for="" id="lbl">Ordenar por:</label>
+				<select name="select" id="combo">
+					<option value="value1">Destacados</option>
+					<option value="value2" selected>Alfabéticamente, A-Z</option>
+					<option value="value3">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+		</div>
+		-->
+		<div class="row ml-0 mr-0">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let item of productos">
+				<div class="p-0 card-hover-line h-100 card-body" id="card-co">
+					<div class="bg-light container-img-light img-card">
+						<img [src]="urlimgproducto+item.imagen"  class="w-100" id="img">
+					</div>
+					
+					
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400" id="acc-desc"> 
+								{{item.nombre}}
+							</p>
+ 						</div> 
+					</div>
+					<div class="row mt-1 p-3 card-name">
+						<div class="col-12 p-1" id="card-name">
+							<h4 class="font-700" id="categ">${{item.precio_venta}}</h4>
+						</div>
+					</div>
+					<div class="row p-1 card-mas mb-mt" id="card-btn">
+						<div class="col-12 text-center" id="ver-mas">
+							<button class="btn-hero" (click)="agregarp(item, 'default')">Agregar al carrito</button>
+						</div>
+						
+						<div class="col-12 text-center" id="ver-mas">
+							<!-- <button class="btn-hero-outline" data-bs-toggle="modal" data-bs-target="#modal-product-images">Ver detalles</button> -->
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- PIÑATAS -->
+<section class=" py-5" >
+	<article class="container">
+		<div class="row">
+			
+			<div class="col-12 text-center" id="text-center">
+				<span class="texto-relleno">
+					<h2 id="sub-title">PIÑATAS</h2>
+					LOS MEJORES DISEÑOS DE PIÑATAS LOS ENCONTRARAS AQUÍ.
+				</span>
+			</div>
+		</div>
+		<div>
+ 
+		</div>
+		<!--
+		<div class="text-center filters-toolbar__item-wrapper">
+			<div class="filters-toolbar__item-child">
+				<label for="" id="lbl">Ordenar por:</label>
+				<select name="select" id="combo">
+					<option value="value1">Destacados</option>
+					<option value="value2" selected>Alfabéticamente, A-Z</option>
+					<option value="value3">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+		</div>
+		-->
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let pinata of pinatas">
+				<div class="p-0 card-hover-line h-100  card-body" id="card-co">
+					<div class="bg-light container-img-light img-card">
+						
+						<img [src]="urlimgserv+pinata.imagen" alt="urlimgserv+pinata.imagen" class="w-100" id="img">
+
+					</div>
+					
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400 text-relleno">
+								{{pinata.servicio}}
+							</p>
+						</div>
+						<div class="row mt-1 p-3 card-name">
+							<div class="col-12 p-1" id="card-name">
+								<h4 class="font-700" id="categ">${{pinata.precio_venta}}</h4>
+							</div>
+						</div>
+					</div>
+					<div class="row p-1 card-mas mb-mt" id="card-btn">
+						<div class="col-12 text-center" id="ver-mas">
+							<button class="btn-hero" (click)="agregar(pinata, 'default')">Agregar al carrito</button>
+						</div>
+						<div class="col-12 text-center mb-mt" id="ver-mas">
+							<!-- <button class="btn-hero-outline" data-bs-toggle="modal" data-bs-target="#modal-product-images">Ver detalles</button> -->
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+<!-- /PIÑATAS -->
+
+
+<!-- INFLABLES -->
+<section class="py-5" id="bg-inflables">
+	<article class="container">
+		<div class="row" >
+			<h1 class="title-bold text-center">Selecciona tus Servicios</h1>
+			<div class="col-12 text-center" id="text-center">
+				
+				<span class="texto-relleno">
+					<h2 id="sub-title">INFLABLES</h2>
+					Tenemos a la renta los mejores inflables del mercado, 
+					ofrecemos los precio_ventas más competitivos de Uriangato,
+					 para que tus niños se diviertan mientras tú 
+					disfrutas de tus reuniones tranquilamente.	
+				</span>
+			</div>
+		</div>
+		<!--
+		<div class="orden">
+			<div class="text-center" id>
+				<label for="" id="lbl">Ordenar por:</label>
+				<select name="select" id="combo">
+					<option value="value1">Destacados</option>
+					<option value="value2" selected>Alfabéticamente, A-Z</option>
+					<option value="value3">Alfabéticamente, Z-A</option> 
+				  </select>
+			</div>
+		</div>
+		-->
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let inflable of inflables">
+				<div class="p-0 card-hover-line h-100  card-body" id="card-co">
+					<div class="bg-light container-img-light img-card">
+						<img [src]="urlimgserv+inflable.imagen" alt="" class="w-100" id="img">
+					</div>
+					
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400 text-relleno">
+								{{inflable.servicio}}
+							</p>
+						</div>
+						<div class="row mt-1 p-3 card-name">
+							<div class="col-12 p-1" id="card-name">
+								<h4 class="font-700" id="categ">${{inflable.precio_venta}}</h4>
+							</div>
+						</div>
+					</div>
+					<div class="row p-1 card-mas mb-mt" id="ver-mas">
+						<div class="col-12 text-center">
+							<a (click)="agregar(inflable, 'default')" class="marcado">APARTAR</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+
+<section class="py-5" id="bg-sonido">
+	<article class="container" >
+		<div class="row" >
+			
+			<div class="col-12 text-center"  id="text-center" >
+				<span class="texto-relleno">
+					<h2 id="sub-title">SONIDO</h2>
+					Tenemos a la renta los mejores sonidos del mercado, 
+					ofrecemos los precio_ventas más accesibles.
+				</span>
+			</div>
+		</div> 
+		<!--
+		<div class="text-center" id="orden"> 
+			<div >
+				<label id="label">Ordenar por:</label>
+				<select name="select" id="combo">
+					<option value="value1">Destacados</option>
+					<option value="value2" selected>Alfabéticamente, A-Z</option>
+					<option value="value3">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+		</div>
+		-->
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let sonido of sonidos">
+				<div class="p-0 card-hover-line h-100  card-body" id="card-co">
+					<div class="bg-light container-img-light img-card ">
+						<img [src]="urlimgserv+sonido.imagen" alt="" class="w-100" id="img">
+					</div>
+					
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400 text-relleno">
+								{{sonido.servicio}}
+							</p>
+						</div>
+						<div class="row mt-1 p-3 card-name">
+							<div class="col-12 p-1" id="card-name">
+								<h4 class="font-700" id="categ">${{sonido.precio_venta}}</h4>
+							</div>
+						</div>
+					</div>
+					<div class="row p-1 card-mas mb-mt"  id="ver-mas">
+						<div class="col-12 text-center">
+							<a  (click)="agregar(sonido, 'default')" class="marcado">APARTAR</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+</section>
+	
+<!-- /INFLABLES -->
+
+<!-- SALON -->
+<section class=" py-5" id="bg-salon">
+	<article class="container">
+		<div class="row">
+			<div class="col-12 text-center" id="text-center">
+				<span class="texto-relleno">
+					<h2 id="sub-title">SALONES</h2>
+					Organiza todo tipo de eventos con nuestros salones para
+					 eventos sociales tenemos un gran estilo, desde graduaciones,
+					  bautizos, fiestas de fin de año,con la calidad y seguridad 
+					  que te ofrecemos en Hoteles Misión.
+					Contáctanos para cotizar tu evento mencionando el hotel de tu elección,
+					 te ayudamos a presupuestar de la manera más sencilla,
+
+					asegurando una experiencia inolvidable.	 
+				</span>
+			</div>
+		</div>
+		<!--
+		<div class="text-center filters-toolbar__item-wrapper">
+			<div class="filters-toolbar__item-child">
+				<label for="" id="lbl">Ordenar por:</label>
+				<select name="select" id="combo">
+					<option id="opt" value="value1">Destacados</option>
+					<option id="opt" value="value2" selected>Alfabéticamente, A-Z</option>
+					<option id="opt" value="value3">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+		</div>
+		-->
+		<div class="row"> 
+			<div class="col-6 col-md-4 mt-4" *ngFor="let salon of salones">
+				<div class="p-0 card-hover-line h-100  card-body" id="card-co">
+					<div class="bg-light container-img-light img-card">
+						<img [src]="urlimgserv+salon.imagen" alt="" class="w-100" id="img">
+					</div>
+					
+					<div class="row p-1 desc-1">
+						<div class="col-12  card-desc" id="div-desc">
+							<p class="text-center font-400 text-relleno">
+								{{salon.servicio}}
+							</p>
+						</div>
+						<div class="row mt-1 p-3 card-name">
+							<div class="col-12 p-1" id="card-name">
+								<h4 class="font-700" id="categ">${{salon.precio_venta}}</h4>
+							</div>
+						</div>
+					</div>
+					<div class="row p-1 card-mas" id="ver-mas">
+						<div class="col-12 text-center mb-mt">
+							<a (click)="agregar(salon, 'default')"  class="marcado">APARTAR</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+<!-- /SALON -->
+
+<!-- CATEGPRÍAS -->
+<section class="py-5" id="bg-coctel">
+	<article class="container">
+		<div class="row">
+			<div class="col-12 text-center" id="text-center">
+				<span class="texto-relleno">
+					<h2 id="sub-title">COCTELERÍA</h2>
+					Coctelería moderna para todo tipo de eventos.
+				</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let coctel of cocteleria">
+				<div class="p-0 card-hover-line h-100  card-body" id="card-co">
+					<div class="bg-light container-img-light img-card">
+						<img [src]="urlimgserv+coctel.imagen"  alt="" class="w-100" id="img">
+					</div>
+					
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400 text-relleno">
+								{{coctel.descripcion}}
+							</p>
+						</div>
+						<div class="row mt-1 p-3 card-name">
+							<div class="col-12 p-1" id="card-name">
+								<h4 class="font-700" id="categ">${{coctel.precio_venta}}</h4>
+							</div>
+						</div>
+					</div>
+					<div class="row p-1 card-mas" id="ver-mas">
+						<div class="col-12 text-center mb-mt">
+							<a (click)="agregar(coctel, 'default')" class="marcado">APARTAR</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+<!-- /CATEGPRÍAS -->
+<!-- 
+<section class="py-5" id="bg-coctel">
+	<article class="container">
+		<div class="row">
+			<div class="col-12 text-center" id="text-center">
+				<span class="texto-relleno">
+					<h2 id="sub-title">Producto</h2>
+					Los mejores procutos para todo tipo de eventos.
+				</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let item of productos">
+				<div class="p-0 card-hover-line h-100" id="card-co">
+					<div class="bg-light container-img-light img-card">
+						
+						<img [src]="urlimgproducto+item.imagen"  class="w-100" id="img">
+
+					</div>
+					
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400 text-relleno">
+								{{item.nombre}}
+							</p>
+						</div>
+						<div class="row mt-1 p-3 card-name">
+							<div class="col-12 p-1" id="card-name">
+								<h4 class="font-700" id="categ">{{item.precio_venta | currency }}</h4>
+							</div>
+						</div>
+					</div>
+					<div class="row p-1 card-mas" id="ver-mas">
+						<div class="col-12 text-center">
+							<a  (click)="agregarp(item, 'default')" class="marcado">APARTAR</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section> -->

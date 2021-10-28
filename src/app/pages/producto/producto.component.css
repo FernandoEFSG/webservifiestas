@@ -1,0 +1,589 @@
+.icon-search{
+	color: #fff;
+	width: 18px;
+	-webkit-filter: invert(100%);
+	        filter: invert(100%);
+}
+
+.fondo {  
+  font-family: "Montserrat", sans-serif;
+  background-image: url('../../../assets/imgs/accesorios/fondo-accesorios4.jpg');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+.icon-succ{
+  width: 45px;
+}
+
+#card-pa{
+  background-color: white;
+}
+#titulo {
+  justify-content: center;
+} 
+#card-desc{
+  margin: 5px 5px ; 
+}
+#ver-mas{
+  padding-bottom: 10px;
+}
+#card-btn{
+  align-items: center;
+  justify-content: center;
+}
+#img{
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+}
+.title-hero {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+  color: white;
+  text-shadow: 0px 0px 15px #000;
+  -webkit-text-shadow: 0px 0px 50px #999;
+  -moz-text-shadow: 0px 0px 15px #000;
+  font-size: 46px;
+}
+.sub {
+  color: white;
+}
+#categ {
+  text-align: center;
+}
+#combo{
+  margin-left: 10px;
+  width: 220px;
+  height: 45px;
+}
+.card-desc{
+  padding-top: 10px;
+}
+#text-center{
+  margin-bottom: 70px;
+}
+#lbl{
+  color: black;
+}
+.text-hero {
+  font-size: 24px;
+  line-height: 28px;
+  color: #fff;
+}
+
+.btn-hero-outline,
+.btn-hero {
+  width: 75%;
+  padding: 0.8em 1em;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.btn-hero-outline {
+  background-color: #00beca;
+  border: 2px solid #00beca;
+  transition: 0.3s ease;
+}
+
+.btn-hero-outline:hover {
+  background-color: transparent;
+  border: 2px solid #00beca;
+  color: #00beca;
+  transition: 0.3s ease;
+}
+
+.btn-hero {
+  background-color: #ff556f;
+  border: 2px solid #fff;
+  transition: 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: #fff;
+  border: 2px solid #ff556f;
+  color: #ff556f;
+  transition: 0.3s ease;
+}
+
+.bg-beneficios {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../../assets/imgs/bg-beneficios.jpeg");
+  padding: 5em 0px;
+}
+
+.img-beneficios {
+  width: 130px;
+  display: block;
+  margin: auto;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.texto-cantidad {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600 !important;
+  display: block;
+  color: #fff;
+  font-size: 40px;
+  padding: 0.5em 0px;
+}
+
+.texto-name {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+  display: block;
+  color: #fff;
+  font-size: 25px;
+}
+
+.title-banner {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+  color: #fe0200;
+}
+
+.sub {
+  border-bottom: 4px solid #fe0200;
+}
+
+/* ****** Formulario de contacto ****** */
+.input-blue {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #00beca;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+  margin-top: 1em;
+}
+
+.input-blue:focus {
+  outline: none;
+}
+
+.input-blue::-webkit-input-placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.input-blue::-moz-placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.input-blue:-ms-input-placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.input-blue::-ms-input-placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.input-blue::placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.input-blue2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #00beca;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+  margin-top: 1em;
+}
+
+.input-blue2:focus {
+  outline: none;
+}
+
+.input-blue2::-webkit-input-placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.input-blue2::-moz-placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.input-blue2:-ms-input-placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.input-blue2::-ms-input-placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+.input-blue2::placeholder {
+  color: #fff !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 900 !important;
+}
+
+@media screen and (max-width: 500px) {
+  .title-hero {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .text-hero {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .llena {
+    text-align: center;
+  }
+  .shadow {
+    margin-bottom: 20px;
+  }
+
+  .card-name h4 {
+    font-size: 1em;
+    color: #000;
+  }
+
+  .texto-cantidad,
+  .texto-name {
+    font-size: 16px;
+  }
+  .img-beneficios {
+    width: 100px;
+  }
+  .beneficios {
+    padding: 5px auto;
+  }
+  .btn-buy {
+    font-size: 12px;
+  }
+  .btn-hero,
+  .btn-hero-outline {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 500px) {
+.fondo{
+  height: 35vh;
+}
+.btn-hero,
+  .btn-hero-outline {
+    font-size: 10px;
+  }
+
+  #combo{
+    font-size: 11px;
+    width: auto;
+    height: 35px;
+  }
+  #img{
+    width: 100%;
+    height: 25vw !important;
+  }
+  .bg-container{
+    height: 160px;
+    width: 170px;
+    margin-right: 90px;
+  }
+  .product-info{
+    padding: 3px 40px;
+  }
+  #slider{
+    justify-items: end;
+    align-items: center;
+  }
+  #number{
+    width: 70px !important;
+    text-align: center;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 769px) {
+  .bg-container{
+   width: 230px;
+   height: 220px;
+    margin-right: 90px;
+  }
+  #number{
+    width: 80px !important;
+    text-align: center;
+  }
+  #slider{
+    justify-items: end;
+    align-items: center;
+  }
+  .title-hero {
+    font-size: 24px;
+    text-align: center;
+  }
+  .text-hero {
+    font-size: 14px;
+    text-align: center;
+  }
+  #img{
+    width: 100%;
+    height: 25vw !important;
+    
+  }
+  .title-bold {
+    font-size: 23px;
+  }
+  .texto-cantidad,
+  .texto-name {
+    font-size: 16px;
+  }
+  .img-beneficios {
+    width: 100px;
+  }
+  .btn-buy {
+    font-size: 12px;
+  }
+  
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .title-hero,
+  .text-hero {
+    text-align: center;
+  }
+  #img{
+    width: 100%;
+    height: 30vh !important;
+    object-fit: fill;
+  }
+}
+
+
+
+
+/* Slider --------------------------------- */
+.product-container {
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.img-card-container {
+  position: relative;
+  text-align: center;
+  color: #9a9a9a;
+}
+
+.img-card-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.bottom-right-card {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+}
+
+.bottom-right-card button {
+  background-color: transparent;
+  border: none;
+  color: #FFC200;
+  text-align: center;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+}
+
+.carousel {
+  z-index: 1;
+}
+
+.modal-body {
+  position: relative;
+  background-color: white;
+}
+.modal-header{
+  background-color: #FFE190;
+  border: 1px solid #FFE190;
+}
+
+.modal-title {
+  margin: 0;
+  color: black !important; 
+}
+.modal-footer{
+  background-color: #FFE190;
+  border: 1px solid #FFE190;
+}
+.imagenes-producto {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#slider {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+#btn-x{
+  background-color: white;
+}
+#number{
+  width: 150px;
+  text-align: center;
+}
+#txt-w{
+  color: black;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700 !important;
+}
+#detail{
+  font-family: 'Montserrat', sans-serif !important;
+	font-weight: 700 !important;
+  font-size: 24px;
+}
+
+.product-info {
+  border-left: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: -40px;
+}
+
+.slides {
+  scroll-behavior: auto;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+}
+
+.bg-container {
+  overflow: hidden;
+  text-align: center;
+}
+
+.slides img {
+  width: 90%;
+  border: 1px solid rebeccapurple;
+  border-radius: 10px;
+}
+
+.slides img:nth-child(2) {
+  margin: 0;
+}
+
+.bg {
+  width: auto;
+  max-width: 80%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  height: 80%;
+  max-height: 65vh;
+  margin: 0 auto;
+  transition: 200ms linear;
+}
+
+.btn-primary {
+  background-color: #00beca;
+  border: 2px solid white;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  border: 2px solid #00beca;
+  color: #00beca;
+  transition: 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: #ff556f;
+  border: 2px solid #fff;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #fff;
+  border: 2px solid #ff556f;
+  color: #ff556f;
+  transition: 0.3s ease;
+}
+/* Producto opciones ---------------------- */
+
+/* Tallas --------------------------------- */
+#producto-opciones-tallas-contenedor {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#producto-opciones-tallas button {
+  margin: 20px 30px;
+  border-radius: 10px;
+
+  border: 1px solid #FFC200;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.talla-seleccionada {
+  background-color: #FFC200;
+  color: #fff;
+}
+
+/* Colores -------------------------------- */
+#producto-opciones-colores-contenedor {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#producto-opciones-colores button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: green;
+  border: none;
+  margin: auto;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+/* Número piezas -------------------------- */
+#producto-opciones-piezas-contenedor {
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+}

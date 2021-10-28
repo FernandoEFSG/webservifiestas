@@ -1,0 +1,70 @@
+<section class="shipping">
+    <h3 class="text-center">Métodos de envío</h3>
+    <div class="container2">
+      <div class="card mt-3 container" *ngFor="let l of  lista_shipment; let i = index"
+      id="metodo-{{i}}" (click)="metodo_seleccionado(i,lista_shipment.length,l)">
+      <div class="card-title">
+        {{l.provider}}
+      </div>
+      <div class="card-body">
+        <label class="form-check-label">
+          <h6>{{l.proveedor}} ({{l.service}}) - $ {{l.precio}} MXN</h6>
+          Duración: {{l.duracion}} <br>
+          <!-- <p>Total a pagar: $ {{l.precio + subtotal}} MXN</p> -->
+        </label>
+      </div>
+    </div>
+    <div class="cart-grid-right col-12 col-lg-4 cr-res">
+
+      <div class="card cart-summary">
+          <b><p class="txt-p">RESUMEN</p></b>
+          <div class="cart-detailed-totals">
+              <div class="card-body">
+                <!-- <div class="cart-summary-line flex">
+                  <div>
+                      <span class="label js-subtotal">
+                        Total Productos
+                      </span>
+                  </div>
+                  <div class="rig">
+                      <span class="value">5</span>
+                  </div>
+              </div> -->
+                  <div class="cart-summary-line flex">
+                      <div>
+                          <span class="label js-subtotal">
+                             Subtotal
+                          </span>
+                      </div>
+                      <div class="rig">
+                          <span class="value">{{subtotal | currency}}</span>
+                      </div>
+                  </div>
+                  <div class="cart-summary-line flex">
+                      <div>
+                          <span class="label">Costo envío</span>
+                      </div>
+                      <div class="rig">
+                          <span class="value">{{preciopaqueteria | currency }}</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="card-body">
+                  <div class="cart-summary-line cart-total flex">
+                      <div>
+                          <span class="label">TOTAL:</span>
+                      </div>
+                      <div class="rig">
+                          <span class="value">{{total | currency}}</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    </div>
+    <div class="btn-save-container">
+		<button  (click)="guardardatos()" class="btn-hero" id="guardar" name="guardar" type="submit"   >Siguiente Paso</button>
+	  </div> 
+  </section>
+  

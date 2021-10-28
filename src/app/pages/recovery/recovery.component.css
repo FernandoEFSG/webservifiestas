@@ -1,0 +1,158 @@
+.title-hero {
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 600 !important;
+	color: white;
+	text-shadow: 1px 0px 2px #000;
+	-webkit-text-shadow: 0px 0px 10px #999;
+	-moz-text-shadow: 0px 0px 15px #000;
+	font-size: 46px;
+}
+#send {
+    background-color: gray;
+    color: white;
+    border: NONE;
+}
+::-webkit-input-placeholder {
+    color: white;
+}
+::-moz-placeholder {
+    color: white;
+}
+:-ms-input-placeholder {
+    color: white;
+}
+::-ms-input-placeholder {
+    color: white;
+}
+::placeholder {
+    color: white;
+}
+#nombre {
+    background-image: url(../../../assets/imgs/user.svg);
+    background-repeat: no-repeat;
+    background-position: 9px 13px;
+    background-size: 20px;
+    
+}
+#telefono{
+    background-image: url(../../../assets/imgs/phone.svg);
+    background-repeat: no-repeat;
+    background-position: 9px 13px;
+    background-size: 20px;
+}
+
+#nombre, #telefono{
+    background-color: rgb(87, 185, 209);
+    color: white;
+    margin: 30px auto;
+    text-align: center;
+}
+.p1 {
+    color: black;
+    font-size: 23px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+.p2 {
+    color: black;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+#bg-crear {
+    background-color: white;
+}
+.bg-crear {
+    background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('../../../assets/imgs/azul.jpg');
+    margin: 15px 0;
+    padding: 5px 0;
+}
+
+ 
+  .form-login {
+    font-family: "Montserrat", sans-serif;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 0 0;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    align-items: center;
+  }
+  
+  .form-login h1 {
+    width: 80%;
+    margin: 50px auto;
+  }
+  
+  .form-login h1 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .forgotten-pass {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .forgotten-pass a {
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .form-submit {
+    max-width: 700px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .form-submit button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px 20px;
+  }
+  
+  /* Adorno inputs */
+  
+  .form-submit input {
+    border: 0 !important;
+    background-color: #e7e7e7;
+    border-radius: 20px;
+    padding: 10px 25px;
+  }
+  
+  .form-submit label {
+    margin-left: 15px;
+    font-size: 25px;
+  }
+  
+  .form-submit small {
+    margin-left: 15px;
+  }
+  
+  .row {
+    margin-bottom: 25px;
+  }
+  
+  /* Fin adorno input */
+  
+  /* Adorno botón */
+  
+  .send-button {
+    text-align: center;
+  }
+  
+  .form-submit button {
+    border-radius: 25px;
+    padding: 8px 0;
+  }
+  

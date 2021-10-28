@@ -1,0 +1,238 @@
+<!-- Hero -->
+<section class="fondo">
+	<article class="container">
+		<div class="row d-flex align-items-center" id="titulo">
+			<div class="col-12 col-md-6">
+				<h1 class="title-hero">LOS MEJORES ACCESORIOS PARA TUS FIESTAS</h1>
+			
+			</div>
+		</div>
+	</article>
+</section>
+
+
+
+<!-- CATEGPRÍAS -->
+<section class="py-5" id="bg-accesorios">
+	<article class="container">
+		<div class="row">
+			<div class="col-12 text-center" id="text-center">
+				<!--
+					<h1 class="title-bold">CATEGORÍAS</h1>
+				-->
+				<span class="texto-relleno" >
+					Conoce la variedad de accesorios que tenemos para ti
+				</span>
+			</div>
+		</div>
+		<!--
+		<div class="text-center filters-toolbar__item-wrapper">
+			<div class="filters-toolbar__item-child">
+				<label for="" id="lbl">Ordenar por:</label>
+				<select  (change)="selectOrden($event)"   name="select" id="combo">
+					<!-- <option value="value1">Destacados</option> 
+					<option value="ASC" selected>Alfabéticamente, A-Z</option>
+					<option value="DESC">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+		</div>
+		-->
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let accesorio of Servicios">
+				<div class="p-0 card-hover-line h-100 card-body" id="card-pa">
+					<div class="bg-light container-img-light img-card">
+						<!-- <img src="{{accesorio.img}}" alt="{{accesorio.img}}" class="w-100" id="img"> -->
+						<img [src]="urlimg+accesorio.imagen" alt="{{urlimg+accesorio.imagen}}" class="w-100" id="img">
+					</div>
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400" id="acc-desc">
+								{{accesorio.servicio}}
+							</p>
+ 						</div> 
+					</div>
+					<div class="row mt-1 p-3 card-name">
+						<div class="col-12 p-1" id="card-name">
+							<h4 class="font-700" id="categ">${{accesorio.precio_venta}}</h4>
+						</div>
+					</div>
+					<div class="row p-1 card-mas mb-mt" id="card-btn">
+						<div class="col-12 text-center" id="ver-mas">
+							<button class="btn-hero" (click)="addservice(accesorio, 'default')">Agregar al carrito</button>
+						</div>
+						<div class="col-12 text-center" id="ver-mas">
+							<button class="btn-hero-outline" (click)="detallesServicios(accesorio)" data-bs-toggle="modal" data-bs-target="#modal-product-images">Ver detalles</button>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+<!-- /productoa -->
+
+<section class="py-5 bg-accesorios">
+	<article class="container">
+		<div class="row">
+			<div class="col-12 text-center" id="text-center">
+				<!--
+					<h1 class="title-bold">CATEGORÍAS</h1>
+				-->
+				<!-- <span class="texto-relleno" >
+					Conoce la variedad de productos que tenemos para ti
+				</span> -->
+			</div>
+		</div>
+		<!--
+		<div class="text-center filters-toolbar__item-wrapper">
+			<div class="filters-toolbar__item-child">
+				<label for="" id="lbl">Ordenar por:</label>
+				<select  (change)="selectOrden($event)"  name="select" id="combo">
+					<option value="value1">Destacados</option>
+					<option value="ASC" selected>Alfabéticamente, A-Z</option>
+					<option value="DESC">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+		</div>
+		-->	
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let item of productos ">
+				<div class="p-0 card-hover-line h-100" id="card-pa">
+					<div class="bg-light container-img-light img-card">
+						<!-- <img src="{{accesorio.img}}" alt="{{accesorio.img}}" class="w-100" id="img"> -->
+						<img [src]="urlimgproducto+item.imagen"  class="w-100" id="img">
+					</div>
+					<div class="row p-1 desc-1" id="div-desc">
+						<div class="col-12  card-desc">
+							<p class="text-center font-400" id="acc-desc">
+								<!-- {{accesorio.servicio}} -->
+								{{item.nombre}}
+							</p>
+ 						</div> 
+					</div>
+					<div class="row mt-1 p-3 card-name">
+						<div class="col-12 p-1" id="card-name">
+							<h4 class="font-700" id="categ">
+                                <!-- ${{accesorio.precio_venta}} -->
+                                 {{item.precio_venta | currency }}
+                            </h4> 
+						</div>
+					</div>
+					<div class="row p-1 card-mas" id="card-btn">
+						<div class="col-12 text-center" id="ver-mas">
+							<button class="btn-hero" (click)="agregar(item, 'default')" >Agregar al carrito</button>
+						</div>
+						<div class="col-12 text-center" id="ver-mas">
+							<button (click)="see(item)" class="btn-hero-outline"data-bs-toggle="modal" data-bs-target="#modal-product">Ver detalles</button>
+						</div> 
+					</div>
+				</div>
+			</div>
+			<!--
+			<div class="col-12 d-flex justify-content-center">
+				<pagination-controls (pageChange)="p = $event"></pagination-controls>
+			</div>
+			-->
+		</div>
+	</article>
+</section>
+ 
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-product-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="staticBackdropLabel">{{servicio.servicio}}</h4>
+                <button id="btn-x" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <article id="imagenes-producto">
+                    <div id="slider">
+                        <div class="bg-container">
+                            <img [src]="urlimg + servicio.img"
+                                class="bg">
+                        </div>
+                        <div class="product-info">
+                            
+                            <div id="producto-opciones">
+                                <h5 class="text-center" id="detail">Detalles del producto</h5> <br>
+                                <p id="txt-w">PRECIO:</p><p class="text-center">${{servicio.precio_venta }}</p>
+                                <div id="producto-opciones-tallas-contenedor">
+                                    <div id="producto-opciones-tallas">
+										<P id="txt-w">Descripcion:</P>
+                                        <p class="text-center">{{servicio.descripcion}}</p>
+                                    </div>
+                                </div>
+                                <div id="producto-opciones-piezas-contenedor">
+                                    <p id="txt-w">Número de piezas:</p>
+                                    <form [formGroup]="form" >
+                                        <input type="number" formControlName="cuantos" min="1" value="1"  id="number">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#msjCarrito" (click)="addservice(servicio,'modal')">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-product" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="staticBackdropLabel">
+                    {{ producto.nombre | uppercase }}
+                </h4>
+                <button id="btn-x" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <article id="imagenes-producto">
+                    <div id="slider">
+                        <div class="bg-container">
+                            <img [src]="urlimgproducto+img"
+                                class="bg">
+                        </div>
+                        <div class="product-info">
+                            <div id="producto-opciones">
+                                <h5 class="text-center" id="detail">Detalles del producto</h5> <br>
+                                <p id="txt-w">PRECIO:</p><p class="text-center">
+                                    {{ producto.precio | currency }}
+                                </p>
+                                <div id="producto-opciones-tallas-contenedor">
+                                    <div id="producto-opciones-tallas">
+										<P id="txt-w">Descripcion:</P>
+                                        <p class="text-center">
+                                            {{producto.des  | uppercase}}
+											
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="producto-opciones-piezas-contenedor">
+                                    <p id="txt-w">Número de piezas:</p>
+                                    <form [formGroup]="form">
+                                        <input formControlName="cuantos" type="number" min="1" value="1" id="number">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" (click)="agregar(producto,'modal')"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#msjCarrito">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>

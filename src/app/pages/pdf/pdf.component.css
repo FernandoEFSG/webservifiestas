@@ -1,0 +1,326 @@
+.body-pdf {
+    font-size: 11px;
+    /* height: 792px; */
+    width: 612px;
+    border: 1px solid #ccc;
+    position: relative;
+    margin: 0 auto;
+    line-height: 12px;
+    }
+    
+    .modal-balance {
+    min-width: 630px;
+    }
+    
+    .main-pdf {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    }
+    
+    .header-pdf {
+    font-size: 10px;
+    height: 195px;
+    }
+    
+    .footer-pdf {
+    font-size: 7px;
+    position: relative;
+    bottom: 0;
+    margin-top: 5px;
+    }
+    
+    .back-div-shadows-container {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 1));
+    z-index: 1;
+    position: absolute;
+    }
+    
+    .back-div-shadows {
+    background: rgba(0, 0, 0, 0.01);
+    clip-path: polygon(25% 0%, 70% 0%, 45% 100%, 0% 100%);
+    width: 500px;
+    height: 225px;
+    margin-left: 25px;
+    }
+    
+    .phone-container {
+    font-family: "Libre Franklin", sans-serif;
+    clip-path: polygon(6% 0%, 100% 0, 100% 100%, 0 100%);
+    background-color: #5777de;
+    width: 50%;
+    height: 30px;
+    float: right;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    justify-content: flex-end;
+    padding-right: 25px;
+    }
+    
+    .main-info-container {
+    font-family: "Montserrat", sans-serif;
+    clip-path: polygon(15% 0%, 100% 0, 100% 100%, 0 100%);
+    background-color: #ebebeb;
+    width: 90%;
+    height: 120px;
+    float: right;
+    color: #4378e2;
+    padding-left: 20%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: visible;
+    }
+    
+    .main-info-container-image {
+    height: 35px;
+    width: auto;
+    margin-top: 15px;
+    }
+    
+    .main-info-containter-text {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    }
+    
+    .seller-info-container {
+    font-family: "Libre Franklin", sans-serif;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    background-color: #4378e2;
+    width: 60%;
+    height: 80px;
+    color: #fff;
+    transform: translateY(-50px);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    }
+    
+    .seller-info-container p {
+    margin: 0 auto;
+    }
+    
+    .fb-info-container {
+    font-size: 12px;
+    font-family: "Libre Franklin", sans-serif;
+    clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
+    background-color: #4378e2;
+    width: 40%;
+    height: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 60px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    }
+    
+    .registro-info-container {
+    position: relative;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    clip-path: polygon(10% 0%, 100% 0, 100% 100%, 0 100%);
+    background-color: #ebebeb;
+    width: 80%;
+    height: 50px;
+    margin-left: auto;
+    color: #4378e2;
+    padding-left: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 10px;
+    }
+    
+    .document-info {
+    display: flex;
+    align-items: flex-end;
+    }
+    
+    .document-info-client {
+    border: 1px solid #4378e2;
+    padding: 10px;
+    border-radius: 5px;
+    color: #4378e2;
+    font-size: 14px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    }
+    
+    .document-info-client p {
+    margin-bottom: 0;
+    }
+    
+    .document-info-client span {
+    background-color: #5777de;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    }
+    
+    .document-info-date {
+    margin-left: auto;
+    margin-right: 40px;
+    background-color: #ebebeb;
+    padding: 15px;
+    border-radius: 10px;
+    color: #4378e2;
+    text-align: center;
+    }
+    
+    .main-table {
+    background-color: #ebebeb;
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px 15px;
+    border-spacing: 10px;
+    border-collapse: separate;
+    }
+    
+    .main-table-display {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    }
+    
+    .relationship-table-display {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    }
+    
+    .main-table-header-cell {
+    font-size: 14px;
+    background-color: #5777de;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    }
+    
+    .main-table-content-cell-first {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 10px;
+    }
+    
+    .main-table-content-cell-last {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    }
+    
+    .main-table-content-cell-double {
+    border-radius: 10px;
+    margin-top: 10px;
+    }
+    
+    .main-table-content-cell {
+    background-color: #91a5ea;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #000;
+    padding: 10px;
+    }
+    
+    .terminos-condiciones {
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 7px;
+    }
+    
+    .relation-title {
+    margin-top: 30px;
+    margin-left: 10px;
+    }
+    
+    .passengers-container {
+    margin: 10px;
+    }
+    
+    .passengers-container h3 {
+    margin: 0;
+    }
+    
+    .footer-firmas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .linea-firma {
+    padding: 0;
+    width: 95%;
+    margin: 40px auto 10px auto;
+    }
+    
+    .linea-firma-middle {
+    padding: 0;
+    width: 95%;
+    margin: 10px auto 10px auto;
+    }
+    
+    .firma-vendedor-info * {
+    display: block;
+    }
+    
+    .firma-info-title {
+    font-size: 10px;
+    }
+    
+    .firma-info-title-middle {
+    font-size: 11px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    }
+    
+    .firma-pago-info * {
+    display: block;
+    }
+    
+    .firma-cliente-info * {
+    display: block;
+    }
+    .firs-row-td-start {
+    border-radius: 10px 0 0 0;
+    }
+    .firs-row-td-end {
+    border-radius: 0 10px 0 0;
+    }
+    
+    .last-row-td-start {
+    border-radius: 0 0 0 10px;
+    }
+    .last-row-td-end {
+    border-radius: 0 0 10px 0;
+    }
+    
+    .page[size="A4"] {
+    background: white;
+    width: 21cm;
+    height: 29.7cm;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    }
+    
+    @page {
+        /*size: auto;*/
+        margin: 0;
+    }
+    
+    @media print {
+      body {-webkit-print-color-adjust: exact;}
+    }

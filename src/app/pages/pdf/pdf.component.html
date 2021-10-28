@@ -1,0 +1,391 @@
+
+  <div class="page" size="A4" id="htmlData">
+        <div class="body-pdf mt-5"  style="height: 100%; width: 100%;" #boby_pdf id="printableArea">
+          <div class="header-pdf">
+            <div class="phone-container">
+              <h5>
+                <i class="fas fa-phone-alt"></i> Tel: (443) 1111 000
+              </h5>
+            </div>
+            <div class="main-info-container">
+              <img
+                src="../../../assets/servifiestas2.png"
+                class="main-info-container-image"
+              />
+              <div class="main-info-containter-text">
+                <p style="font-size: 12px;">
+                  SERVI FIESTAS <br />
+                  Calle 16 de septiembre<br/>
+                  Col. Centro, <br />
+                  Uriangato, Guanajuato.<br/>
+                </p>
+              </div>
+            </div>
+
+            <div class="seller-info-container">
+              <p style="font-size: 12px;">
+                Lugar<br/>{{rentaservicio.lugar_evento }}<br>
+               fecha y hora<br/>
+                {{rentaservicio.fecha_evento}} - {{rentaservicio.hora_evento }}
+              </p>
+            </div>
+          </div>
+
+          <div class="main-pdf">
+            <div class="document-info">
+              <div class="document-info-client" >
+                <p>
+                  Total 
+                </p>
+                <span> {{subtotal}} MXN</span>
+              </div>
+
+<!--               <div class="document-info-date" *ngIf="!!pago_credito_selected">
+                <p>Pago Cr&eacute;dito- No {{ pago_credito_selected.id }}</p>
+                <p>
+                  Fecha- {{ pago_credito_selected.fecha | date: "dd/MM/yyyy" }}
+                </p>
+              </div> -->
+            </div>
+
+            <div class="main-table">
+              <table class="table table-striped">
+                <thead>
+                  <tr style="border-style: hidden">
+                    <th class="p-1">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Folio  
+                      </div>
+                    </th>
+                    <th class="p-1">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Fecha | compra
+                      </div>
+                    </th>
+                    <th class="p-1 w-25">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Primer pago
+                      </div>
+                    </th>
+                    <th class="p-1">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        # servicios
+                      </div>
+                    </th>
+                    <th class="p-1 w-25">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Estado
+                      </div>
+                    </th>
+                    <th class="p-1 w-25">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Forma de pago
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+              <tr  *ngFor="let item of listaservicios"
+                    class="p-0 m-0"
+                    style="border-style: hidden">
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell text-center"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      "
+                    >
+                      <div class="mb-0 pt-1 pb-1 h-100 text-center">
+                       {{rentaservicio.folio}}
+                      </div>
+                    </td>
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell text-center"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      ">
+                      <div class="mb-0 pt-1 pb-1 h-100 text-center">
+                        {{rentaservicio.fecha}}
+                      </div>
+                    </td>
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      "
+                    >
+                      <div
+                        class="mb-0 pt-1 pb-1 h-100">
+                       {{item.abono}}
+                      </div>
+                    </td>
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell text-center"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;">
+                      <div class="mb-0 pt-1 pb-1 h-100 text-center" >
+                        {{item.servicio}}
+                      </div>
+                    </td>
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      "
+                    >
+                      <div
+                        class="mb-0 pt-1 pb-1 h-100"
+                     
+                      >
+                       {{rentaservicio.estado}}
+                      </div>
+                    </td>
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      "
+                    >
+                      <div
+                        class="mb-0 pt-1 pb-1 h-100">
+                      Efectivo/Sucursal
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              class="credit-notes text-center mt-3 mb-3"
+           
+            >
+              <h3>
+                Abonos
+              </h3>
+            </div>
+            <div class="main-table">
+              <table class="table table-striped">
+                <thead>
+                  <tr style="border-style: hidden">
+                    <th class="p-1">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Monto abonado
+                      </div>
+                    </th>
+                    <th class="p-1">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Fecha del abono
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+              <tr
+                    class="p-0 m-0"
+                    style="border-style: hidden"
+                    *ngFor="let item of [1]; let idx = index"
+                  >
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell text-center {{
+                        idx == 0 ? 'firs-row-td-start' : ''
+                      }} {{ idx == [1].length - 1 ? 'last-row-td-start' : '' }}"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      "
+                    >
+                      <div
+                        class="mb-0 pt-1 pb-1 h-100 text-center"
+                       
+                      >
+                        
+                      </div>
+                    </td>
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      "
+                    >
+                      <div
+                        class="mb-0 pt-1 pb-1 h-100"
+                        *ngIf="!!pago_credito_selected"
+                      >
+                       
+                      </div>
+                    </td>
+                  </tr>
+              </tbody>
+              </table>
+            </div>
+
+<p class='text-center'>No hay registro de abonos.</p>
+          <!-- </div>
+          <div class="credit-notes text-center mt-5 mb-3">
+            <h3>Lista de servicios</h3>
+          </div>
+          <div class="footer-pdf"> -->
+
+            <!-- <div class="main-table">
+              <table class="table table-striped">
+                <thead>
+                  <tr style="border-style: hidden">
+                    <th class="p-1">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Cantidad
+                      </div>
+                    </th>
+                    <th class="p-1">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Servicio
+                      </div>
+                    </th>
+                    <th class="p-1">
+                      <div class="main-table-header-cell m-0 pt-1 pb-1">
+                        Costo
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+
+
+                  <tr
+                    class="p-0 m-0"
+                    style="border-style: hidden"
+                    *ngFor="let item of [1]; let idx = index"
+                  >
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      "
+                    >
+                      <div
+                        class="mb-0 pt-1 pb-1 h-100"
+                        *ngIf="!!pago_credito_selected"
+                      >
+                        cantidad
+                      </div>
+                    </td>
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell text-center {{
+                        idx == 0 ? 'firs-row-td-start' : ''
+                      }} {{ idx == [1].length - 1 ? 'last-row-td-start' : '' }}"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      "
+                    >
+                      <div
+                        class="mb-0 pt-1 pb-1 h-100 text-center"
+                      
+                      >
+                        nombre
+                      </div>
+                    </td>
+                    <td
+                      class="p-1 pb-0 pt-0 main-table-content-cell"
+                      style="
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                      "
+                    >
+                      <div
+                        class="mb-0 pt-1 pb-1 h-100"
+                       
+                      >
+                       precio
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div> -->
+
+<!-- <p class='text-center'>No hay registro de servicios.</p>"; -->
+
+
+          <div class="footer-pdf">
+            <p class="terminos-condiciones text-center" style="font-size: 15px;">OBSERVACIONES</p>
+            <p class="terminos-condiciones" style="height: 100px;">
+
+            </p>
+            <div class="footer-firmas">
+              <div class="firma-vendedor">
+                <hr class="linea-firma" />
+                <div class="firma-vendedor-info">
+                  <span class="text-center firma-info-title"
+                    >FIRMA DE VENDEDOR</span
+                  >
+                  <h6 class="text-center"
+    > <!-- Willy Anthony Le&oacute;n -->
+                    Servifiestas
+                    </h6
+                  >
+                </div>
+              </div>
+
+              <div class="firma-pago mt-3">
+                <div class="firma-info-title-middle">
+                  <b >
+                  {{subtotal}}
+                  </b>
+                </div>
+                <hr class="linea-firma-middle" />
+                <div class="firma-pago-info">
+                  <span class="text-center firma-info-title"
+                    >Monto pendiente</span
+                  >
+                </div>
+              </div>
+
+              <div class="firma-vendedor">
+                <hr class="linea-firma" />
+                <div class="firma-vendedor-info">
+                  <span class="text-center firma-info-title"
+                    >FIRMA DEl CLIENTE</span
+                  >
+                  <h6 class="text-center"
+                    >clientes</h6
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="fb-info-container">
+              <p><i class="fab fa-facebook-f"></i> </p>
+            </div>
+            <div class="registro-info-container">
+              <p>Referencia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="text-center mt-5 mb-5">
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <a href="/home" target="/home" class="btn btn-lg btn-block btn-secondary"><i class="bi bi-printer-fill"></i> REGRESAR</a>
+      </div>
+      <div class="col-12 col-md-8">
+        <button class="btn btn-lg btn-block btn-success" (click)="downloadPDF()" ><i class="bi bi-printer-fill"></i> IMPRIMIR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

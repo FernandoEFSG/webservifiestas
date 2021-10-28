@@ -1,0 +1,61 @@
+
+<section class="shipping">
+    <h3 class="text-center">Resumen de compra</h3>
+    <div class="container2">
+      
+      <div class="cart-grid-right col-12 col-lg-4 cr-res">
+
+      <div class="card cart-summary">
+          <b><p class="txt-p">RESUMEN</p></b>
+          <div class="cart-detailed-totals">
+              <div class="card-body">
+                <div class="cart-summary-line flex">
+                  <div>
+                      <span style="font-weight: bolde;" class="label js-subtotal">
+                        Total Productos
+                      </span>
+                  </div>
+                  <div class="rig">
+                      <span    style="font-weight: bolde;"     class="value">{{totalproducto}}</span>
+                  </div>
+              </div>
+                  <div class="cart-summary-line flex">
+                      <div>
+                          <span    style="font-weight: bolde;"     class="label js-subtotal">
+                             Subtotal
+                          </span>
+                      </div>
+                      <div class="rig">
+                          <span     style="font-weight: bolde;"    class="value">{{total | currency}}</span>
+                      </div>
+                  </div>
+                  <div class="cart-summary-line flex">
+                      <div>
+                          <span  style="font-weight: bolde;"    class="label">Costo envío</span>
+                      </div>
+                      <div class="rig">
+                          <span  style="font-weight: bolde;"   class="value">{{constoenvio | currency}}</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="card-body">
+                  <div class="cart-summary-line cart-total flex">
+                      <div>
+                          <span style="font-weight: bold;"   class="label">TOTAL:</span>
+                      </div>
+                      <div class="rig">
+                          <span style="font-weight: bolde;"  class="value">{{  subtotal | currency }}</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    </div><br>
+    <div style="margin: auto 1px 2px;" class="btn-save-container">
+        <button (click)="makePayment()" style="margin: auto;"  class="btn-hero" id="guardar" name="guardar" type="submit">Pagar</button> 
+        <span>---</span>
+        <button  (click)="salir()"  class="btn-hero" id="guardar" name="guardar" type="submit">Cancelar</button>
+	  </div> 
+  </section>
+  

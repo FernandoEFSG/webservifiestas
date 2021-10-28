@@ -1,0 +1,40 @@
+  <!-- Formulario -->
+  <section class="form-login" id="bg-crear">
+    <div class="bg-crear ">
+        <h1 class="title-hero">CREA TU NUEVA CUENTA</h1>
+    </div>
+    
+    <form class="form-submit">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <h5>CREAR CUENTA</h5>
+                </div>
+                <div class="form-group">
+                    <form  [formGroup]="form">
+                        <div>
+                            <input formControlName="nombre" type="text"  class="form-control" id="nombre" placeholder="Introduce tu nombre completo" required>    
+                        </div>
+                        <input formControlName="correo" type="email" class="form-control" id="nombre" placeholder="email" required>
+                        <input formControlName="telefono" type="tel" class="form-control" id="telefono" placeholder="Coloca tu numero completo" required>
+                        <input formControlName="password" type="password" class="form-control" id="password" placeholder="Elige una contraseña" required>
+                        <input formControlName="password2" type="password" class="form-control" id="password2" placeholder="Confirma tu contraseña" required>
+                    </form>
+                </div>
+            </div>
+             <div *ngIf="form.invalid">
+                 <span style="color:red" *ngIf="this.form.get('nombre').errors?.required">*Debe ingresar un nombre</span><br>
+                 <span style="color:red" *ngIf="this.form.get('correo').errors?.required">*Debe ingresar un correo</span><br>
+                 <span style="color:red" *ngIf="this.form.get('correo').errors?.email">*Ingresa un correo valido</span><br>
+                 <span style="color:red" *ngIf="this.form.get('telefono').errors?.required">*Debe ingresar un telefono</span><br>
+                 <!-- <span style="color:red" *ngIf="password()">La contraseña no son iguales</span> -->
+            </div>
+        </div>
+        <div class="row" id="div-send">
+            <div class="col">
+                <button [disabled]="form.invalid" (click)="insert()" type="button" id="send" name="send" class="btn btn-info">CONFIRMAR</button>
+            </div>
+        </div>
+    </form>
+</section>
+<!-- Fin formulario -->

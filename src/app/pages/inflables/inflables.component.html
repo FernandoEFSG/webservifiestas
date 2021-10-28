@@ -1,0 +1,115 @@
+<!-- Hero -->
+<section class="fondo-inflable">
+	<article class="container">
+		<div class="row d-flex align-items-center" id="titulo">
+			<div class="col-12 col-md-6 ">
+				<h1 class="title-hero">TU MEJOR OPCION PARA RENTA DE INFLABLES</h1>
+			</div>
+		</div>
+	</article>
+</section>
+ 
+
+<!-- CATEGPRÍAS -->
+<section class=" py-5 bg-accesorios">
+	<article class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<span class="texto-relleno">
+					Tenemos a la renta los mejores inflables del mercado, 
+					ofrecemos los precios más competitivos de Uriangato,
+					 para que tus niños se diviertan mientras tú 
+					disfrutas de tus reuniones tranquilamente.	
+				</span>
+			</div>
+		</div>
+		<!--
+		<div class="orden">
+			<div class="text-center" id>
+				<label for="" id="lbl">Ordenar por:</label>
+				<select  (change)="selectOrden($event)"   name="select" id="combo">
+					<!-- <option value="value1">Destacados</option> --
+					<option value="ASC" selected>Alfabéticamente, A-Z</option>
+					<option value="DESC">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+		</div>
+		-->
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let inflable of Inflables">
+				<div class="p-0 card-hover-line h-100 card-body" id="card-in">
+					<div class="bg-light container-img-light img-card">
+						<img [src]="urlimg+inflable.imagen" [alt]="urlimg+inflable.imagen" class="w-100" id="img">
+					</div>
+					<div class="row p-1 desc-1">
+						<div class="col-12 my-5 card-desc">
+							<p class="text-center font-400 text-relleno">
+								{{inflable.servicio}}
+							</p>
+							<p class="text-center text-relleno" id="precio">
+								$ {{inflable.precio_venta}}
+							</p>
+						</div>
+					</div>
+					<div class="mb-mt">
+						<div class="row p-1 card-mas" id="ver-mas">
+							<div class="col-12 my-1 text-center" id="div-apa">
+								<a class="marcado" (click)="agregar(inflable, 'default')" >APARTAR</a>
+							</div>
+						</div>
+						<div class="col-12 text-center" id="ver-mas">
+							<button class="btn-hero-outline" (click)="detallesServicios(inflable)" data-bs-toggle="modal" data-bs-target="#modal-product-images">Ver detalles</button>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+<!-- /CATEGPRÍAS -->
+<!-- Modal -->
+<div class="modal fade" id="modal-product-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="staticBackdropLabel">{{inflable.servicio}}</h4>
+                <button id="btn-x" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <article id="imagenes-producto">
+                    <div id="slider">
+                        <div class="bg-container">
+							<div  [innerHTML]="sanitizer.bypassSecurityTrustHtml(video)"></div>
+
+                            <img *ngIf="video == ''" [src]="urlimg+img" class="bg">
+
+                        </div>
+                        <div class="product-info">
+                            <div id="producto-opciones">
+                                <h5 class="text-center" id="detail">Detalles del producto</h5> <br>
+                                <p id="txt-w">PRECIO:</p><p class="text-center">{{inflable.precio_venta | currency}}</p>
+                                <div id="producto-opciones-tallas-contenedor">
+                                    <div id="producto-opciones-tallas">
+										<P id="txt-w">Descripcion:</P>
+                                        <p class="text-center">{{inflable.descripcion}}</p>
+                                    </div>
+                                </div>
+                                <!-- <div id="producto-opciones-piezas-contenedor">
+                                    <p id="txt-w">Número de piezas:</p>
+                                    <form [formGroup]="form">
+                                        <input type="number" min="1" value="1" formControlName="cuantos" id="number">
+                                    </form>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#msjCarrito" (click)="agregar(inflable,'default')">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>

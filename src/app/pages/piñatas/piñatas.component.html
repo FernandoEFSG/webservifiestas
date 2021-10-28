@@ -1,0 +1,157 @@
+<!-- Hero -->
+<section class="fondo-salones">
+	<article class="container">
+		<div class="row d-flex align-items-center" id="titulo">
+			<div class="col-12 col-md-6 ">
+				<h1 class="title-hero">PIÑATAS</h1>
+			</div>
+		</div>
+	</article>
+</section>
+ 
+
+ <!-- Formulario -->
+ <section  id="bg-crear">
+	<article class="container">
+		<div class="row">
+			<form [formGroup]="form"  class="form-submit" id="formulario">
+				<div class="row">
+					 
+					<div class="col" id="title">
+						<div>
+							<h3 class="text-center " id="h3-t">PIÑATAS PERSONALIZADAS</h3>
+						</div>
+						<div class="form-group" >
+							<div id="input">
+								<input type="text"   formControlName="nombre"   class="form-control" id="nombre" placeholder="Nombre completo" required>    
+							</div>
+							<input type="number"    formControlName="telefono" class="form-control" id="telefono" placeholder="Telefono" required>
+							<div class="bloque">
+								<p id="p-form-ev"> Fecha de evento:</p>
+								<input type="date"   formControlName="fecha" class="form-control" id="fecha-evento" placeholder="Fecha" required>
+							</div>
+							<textarea id="desc"  formControlName="descripcion" class="form-control" placeholder="Descripción de tu piñata"></textarea>
+								<p id="p-form"> Sube la idea de tu piñata:</p>
+								<input formControlName="img" name="uploadedfile" (change)="seleccionImagen($event, false)" class="form-control" id="imagen" type="file" multiple/>
+						</div>
+					</div>
+				</div>
+				<div class="" id="div-send">
+					<div class="" id="btn-cot">
+						<button type="button" [disabled]="form.invalid" (click)="insert()" id="send" name="send" class="btn btn-info">COTIZAR</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</article>
+</section>
+<!-- Fin formulario -->
+<!-- CATEGPRÍAS -->
+<section class="bg-accesorios py-5" id="pinatas">
+	<article class="container">
+		<div class="row">
+			
+			<div class="col-12 text-center" id="text-center">
+				<span class="texto-relleno">
+					LOS MEJORES DISEÑOS DE PIÑATAS LOS ENCONTRARAS AQUÍ.
+				</span>
+			</div>
+		</div>
+		<div>
+ 
+		</div>
+		<!--
+		<div class="text-center ">
+			<div class="">
+				<label class="text-light">Ordenar por:</label>
+				<select  (change)="selectOrden($event)"   name="select" id="combo">
+					<!-- <option value="value1">Destacados</option> --
+					<option value="ASC" selected>Alfabéticamente, A-Z</option>
+					<option value="DESC">Alfabéticamente, Z-A</option>
+				  </select>
+			</div>
+			</div>
+		-->
+		<div class="row">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let item of Pinatas">
+				<div class="p-0 card-hover-line h-100 card-body">
+					<div class="bg-light container-img-light img-card">
+						<img [src]="urlImages+item.imagen" alt="urlImages+item.imagen" class="w-100" id="img">
+					</div>
+					
+					<div class="row p-1 desc-1">
+						<div class="col-12 my-5 card-desc">
+							<p class="text-center font-400 text-relleno">
+								{{item.servicio}}
+							</p>
+						</div>
+					</div>
+					<div class="row mt-1 p-3 card-name">
+						<div class="col-12 p-1" id="card-name">
+							<h4 class="font-700 text-center precio">${{item.precio_venta}}</h4>
+						</div>
+					</div>
+					<div class="row p-1 card-mas mb-mt" id="card-btn">
+						<div class="col-12 text-center" id="ver-mas">
+							<button class="btn-hero" (click)="agregar(item, 'default')">Agregar al carrito</button>
+						</div>
+						<div class="col-12 text-center" id="ver-mas">
+							<button class="btn-hero-outline" (click)="detallesServicios(item)"   data-bs-toggle="modal" data-bs-target="#modal-product-images">Ver detalles</button>
+						</div> 
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</article>
+</section>
+<!-- /CATEGPRÍAS -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-product-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true" *ngFor="let inflable of inflables">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="staticBackdropLabel">{{servicio.servicio}}</h4>
+                <button id="btn-x" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <article id="imagenes-producto">
+                    <div id="slider">
+                        <div class="bg-container">
+                            <img [src]="urlImages+servicio.img"
+                                class="bg">
+                        </div>
+                        <div class="product-info">
+                            
+                            <div id="producto-opciones">
+                                <h5 class="text-center" id="detail">Detalles del producto</h5> <br>
+                                <p id="txt-w">PRECIO:</p><p class="text-center">${{servicio.precio_venta}}</p>
+                                <div id="producto-opciones-tallas-contenedor">
+                                    <div id="producto-opciones-tallas">
+										<P id="txt-w">Descripcion:</P>
+                                        <p class="text-center">{{servicio.descripcion}}</p>
+                                    </div>
+                                </div>
+                                
+                                <div id="producto-opciones-piezas-contenedor">
+                                    <span id="txt-w">Número de piezas:</span>
+                                    <form id="frm-n">
+                                        <input type="number" min="1" value="1"  id="number">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button"  (click)="clearte()" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="agregar(servicio,'modal')">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>

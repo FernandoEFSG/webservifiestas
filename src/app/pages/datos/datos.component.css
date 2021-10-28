@@ -1,0 +1,196 @@
+.client-info {
+    font-family: "Montserrat", sans-serif;
+    max-width: 800px;
+    margin: 50PX auto;
+    padding: 20px;
+    /* background-color: rgb(206, 206, 206); */
+    background-color: #B4F7C7 ;
+
+    border-radius: 40px;
+  }
+  
+  .btn-save-container {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .client-info button {
+    margin-top: 25px;
+  }
+  
+  .btn-hero-outline,
+.btn-hero {
+  width: 150px;
+  padding: 0.8em 1em;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.btn-hero-outline {
+  background-color: #00beca;
+  border: 2px solid #00beca;
+  transition: 0.3s ease;
+}
+
+.btn-hero-outline:hover {
+  background-color: transparent;
+  border: 2px solid #00beca;
+  color: #00beca;
+  transition: 0.3s ease;
+}
+
+.btn-hero {
+  background-color: #ff556f;
+  border: transparent;
+  transition: 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: #fff;
+  border: 2px solid #ff556f;
+  color: #ff556f;
+  transition: 0.3s ease;
+}
+
+  @media screen and (max-width: 500px) {
+    .title-hero {
+      font-size: 25px;
+      text-align: center;
+    }
+  
+    .text-hero {
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+    }
+    .llena {
+      text-align: center;
+    }
+    .shadow {
+      margin-bottom: 20px;
+    }
+  
+    .card-name h4 {
+      font-size: 1em;
+      color: #000;
+    }
+  
+    .texto-cantidad,
+    .texto-name {
+      font-size: 16px;
+    }
+    .img-beneficios {
+      width: 100px;
+    }
+    .beneficios {
+      padding: 5px auto;
+    }
+    .btn-buy {
+      font-size: 12px;
+    }
+    .btn-hero,
+    .btn-hero-outline {
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+  .fondo{
+    height: 35vh;
+  }
+  .btn-hero,
+    .btn-hero-outline {
+      font-size: 10px;
+    }
+  
+    #combo{
+      font-size: 11px;
+      width: auto;
+      height: 35px;
+    }
+    #img{
+      width: 100%;
+      height: 30vh !important;
+    }
+    #mercado,#paypal{
+      width: 80px;
+    }
+    #numb{
+      margin-left: 5px;
+      padding-left: 0px;
+      padding-right: 0px;
+      width: 50px;
+    }
+    #precio{
+      padding: 0px 0px;
+      margin-left: 24px;
+    }
+    .robo-thin{
+      font-size: 14px;
+    }
+    #desc{
+      width: 150px;
+    }
+    #title,#title3{
+      font-size: 12px;
+    }
+    .productos{
+      width: 100%;
+    height: 100%;
+    }
+    .cantidad{
+      padding-right: 70px;
+    }
+    .tit-prod{
+      width: 150px;
+    }
+    .container2{
+      flex-direction: column !important;
+    }
+  }
+  
+  @media (min-width: 501px) and (max-width: 769px) {
+    .title-hero {
+      font-size: 24px;
+      text-align: center;
+    }
+    .text-hero {
+      font-size: 14px;
+      text-align: center;
+    }
+    #img{
+      width: 100%;
+      height: 30vh !important;
+    }
+    .title-bold {
+      font-size: 23px;
+    }
+    .texto-cantidad,
+    .texto-name {
+      font-size: 16px;
+    }
+    .img-beneficios {
+      width: 100px;
+    }
+    .btn-buy {
+      font-size: 12px;
+    }
+    
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .title-hero,
+    .text-hero {
+      text-align: center;
+    }
+    #img{
+      width: 100%;
+      height: 30vh !important;
+    }
+  }
+  
+  
+  
+    

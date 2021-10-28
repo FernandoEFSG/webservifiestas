@@ -1,0 +1,92 @@
+
+<section>
+    <article class="container paddingtop" >
+        <div class="row head">
+            <div class="col-6 " id="title">Tus servicios</div>
+            <div class="col-3" id="title">Cantidad</div>
+            <div class="col-3 text-center" id="title3">Subtotal</div>
+        </div>
+		
+
+			<div class="row align-items-center productos bg-carrito" *ngFor="let servicio of servicios; index as i">
+				<!-- Listado de Items en el carrito -->
+				<!-- descripcion del producto -->
+				<div class="col-md-5 col-6">
+					<div class="producto">
+						<img [src]="urlimg + servicio.imagen"  class="img-producto" alt="" srcset="" />
+						<div style="display: flex; flex-direction: column" id="desc">
+							<h5 class="robo-thin bold">{{ servicio.servicio }}</h5> <!-- Nombre producto -->
+							<span style="font-size: 15px;">Precio MXN ${{servicio.precio_venta}} </span> <!-- Precio -->
+							<input type="hidden" >
+							<a (click)="delete(i)" class="eliminar"><span style="font-size: 20px;"> Eliminar </span></a>
+							<!-- Boton de eliminar -->
+						</div>
+					</div>
+				</div>
+				<!-- Cantidad -->
+				<div class="col-md-3 col-3" id="numb">
+					<input class="inputCustom" type="number" [value]="servicio.cuanty" />
+				</div>
+				<!-- Subtotal -->
+				<div class="col-md-3 col-3 text-center" id="precio">
+					<span class="bold" style="font-size: 15px;">MXN ${{servicio.precio_venta}}</span> <!-- Subtotal de la cantidad de productos iguales -->
+					<!-- <input type="hidden" value=""
+					id="subtotal_{{cart.id_carrito}}" name="subtotal_{{cart.id_carrito}}"
+					[ngModel]="cntItem"> -->
+					<input type="hidden" value=""
+					id="subtotal" name="subtotal">
+				</div>
+			</div>
+	
+			<div class="row borde" >
+				<div class="col-12 mt-2" >
+					<div class="row mt-1">
+						<div class="col-6 robo-thin bold">Subtotal</div>
+						<div class="col-6" id="sub-2">MXN {{subtotal | currency }}</div> <!-- Subtotal global -->
+					</div>
+	
+					<div class="row mt-1">
+						<div class="col-6 robo-thin bold">Total</div>
+						<div class="col-6 text-right" id="total">MXN  {{subtotal  | currency}}</div> <!-- Total global -->
+					</div>
+	
+					<div class="row mb-3">
+						<div class="col-md-6 col-12 offset-md-6 mt-2" id="btns">
+							<div class="row" >
+								
+								<div class="col-4">
+									<button type="button" class="btn  btn-hero" (click)="inciarcompra()" >
+										Apartar
+									</button>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        
+    </article>
+</section>
+
+<!-- modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Atención</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  <div class="w-100 text-center mt-3">
+             <p>La compra minima es de $20 pesos, para continuar con la compra agrega más servicios al carrito</p>
+			<!-- <a class="btn-light-danger w-100 d-block"  data-bs-dismiss="modal" (click)="cerrar()">cerrar sessión</a> -->
+		  </div>
+		</div>
+		<div class="modal-footer">
+		       <!-- <button type="button" class="btn btn-secondary" aria-label="Close" data-dismiss="modal">Close</button> -->
+        <button (click)="comprarmas()" ype="button" class="btn btn-primary">Agregar más servicios</button>
+		</div>
+	  </div>
+	</div>
+  </div>

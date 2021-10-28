@@ -1,0 +1,98 @@
+<section class="client-info">
+	<form  [formGroup]="form"  id="datos-form">
+		<h3 class="text-center " id="h3-t">Datos de envío</h3>
+	  <div class="form-group">
+		<div class="row">
+		  <div class="col">
+			<label for="nombre">*Nombre completo</label>
+			<input id="nombre" name="nombre" type="text" class="form-control" formControlName="nombre" required>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="numeroTel">*Número de teléfono</label>
+			<input id="numeroTel" name="numeroTel" type="number" class="form-control" formControlName="telefono" required>
+		  </div>
+		  <div class="col">
+			<label for="correo">*Correo electrónico</label>
+			<input id="correo" name="correo" type="email" class="form-control" formControlName="correo" required>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="direccion">*Calle y Número</label>
+			<input id="direccion"  name="direccion" type="text" class="form-control" formControlName="calle" required>
+		  </div>
+		  <div class="col">
+			<label for="">Número Interior</label>
+			<input id="numeroInt" name="numeroInt" type="number" class="form-control" formControlName="num_int">
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="colonia">*Colonia</label>
+			<input id="colonia" name="colonia" type="text" class="form-control" formControlName="colonia" required>
+		  </div>
+		  <div class="col">
+			<label for="colonia">*Referencias (Entre calles)</label>
+			<input id="referencias" name="referencias" type="text" class="form-control" formControlName="entre_calles" required>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="zip">*Código postal</label>
+			<input id="zip" name="zip" type="number" pattern="[0-9]*" class="form-control" formControlName="cp" required>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+			<label for="estado">*Estado</label>
+			<!-- <input id="estado" name="estado" type="text" class="form-control" formControlName="estado"> -->
+			<select id="estado" name="estado" type="text" class="form-control" formControlName="estado" required>
+			  <option value="no">Seleccione uno...</option>
+			  <option value="Aguascalientes">Aguascalientes</option>
+			  <option value="Baja California">Baja California</option>
+			  <option value="Baja California Sur">Baja California Sur</option>
+			  <option value="Campeche">Campeche</option>
+			  <option value="Chiapas">Chiapas</option>
+			  <option value="Chihuahua">Chihuahua</option>
+			  <option value="CDMX">Ciudad de México</option>
+			  <option value="Coahuila">Coahuila</option>
+			  <option value="Colima">Colima</option>
+			  <option value="Durango">Durango</option>
+			  <option value="Estado de México">Estado de México</option>
+			  <option value="Guanajuato">Guanajuato</option>
+			  <option value="Guerrero">Guerrero</option>
+			  <option value="Hidalgo">Hidalgo</option>
+			  <option value="Jalisco">Jalisco</option>
+			  <option value="Michoacán">Michoacán</option>
+			  <option value="Morelos">Morelos</option>
+			  <option value="Nayarit">Nayarit</option>
+			  <option value="Nuevo León">Nuevo León</option>
+			  <option value="Oaxaca">Oaxaca</option>
+			  <option value="Puebla">Puebla</option>
+			  <option value="Querétaro">Querétaro</option>
+			  <option value="Quintana Roo">Quintana Roo</option>
+			  <option value="San Luis Potosí">San Luis Potosí</option>
+			  <option value="Sinaloa">Sinaloa</option>
+			  <option value="Sonora">Sonora</option>
+			  <option value="Tabasco">Tabasco</option>
+			  <option value="Tamaulipas">Tamaulipas</option>
+			  <option value="Tlaxcala">Tlaxcala</option>
+			  <option value="Veracruz">Veracruz</option>
+			  <option value="Yucatán">Yucatán</option>
+			  <option value="Zacatecas">Zacatecas</option>
+			</select>
+		  </div>
+		  <div class="col">
+			<label for="">*Ciudad</label>
+			<input id="ciudad" name="ciudad" type="text" class="form-control" formControlName="ciudad" required>
+		  </div>
+		</div>
+	  </div>
+	</form>
+	<div class="btn-save-container">
+		<button  (click)="guardardatos()"  class="btn-hero" id="guardar" name="guardar" type="submit">Siguiente Paso</button>
+	</div>
+  </section>  
+
