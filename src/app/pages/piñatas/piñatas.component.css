@@ -62,7 +62,8 @@
 }
 #img{
   width: 100%;
-  height: 25vh !important;
+  height: 100%;
+  /*height: 25vh !important;*/
   -o-object-fit: cover ;
      object-fit: cover ;
   -o-object-position: center;
@@ -577,7 +578,7 @@ background-image: url('../../../assets/imgs/confeti2.jpg');
   }
   #img{
     width: 100%;
-    height: 30vh !important;
+   /* height: 30vh !important;*/
   }
   .bg-container{
     height: 160px;

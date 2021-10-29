@@ -23,7 +23,7 @@
 	margin-top: 30px;
 }
 .w-100{
-	height: 25vw;
+	/*height: 25vw;*/
 	object-fit: fill;
 }
 .btn-whats, .info {

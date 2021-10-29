@@ -28,7 +28,8 @@
   }
 #img{
 	width: 100%;
-	height: 25vh !important;
+	/*height: 25vh !important;*/
+	height: 100% !important;
 	-o-object-fit: cover ;
 	   object-fit: cover ;
 	-o-object-position: center;

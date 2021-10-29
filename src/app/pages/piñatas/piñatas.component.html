@@ -75,7 +75,7 @@
 		<div class="row">
 			<div class="col-6 col-md-4 mt-4" *ngFor="let item of Pinatas">
 				<div class="p-0 card-hover-line h-100 card-body">
-					<div class="bg-light container-img-light img-card">
+					<div class="bg-light container-img-light img-card h-100">
 						<img [src]="urlImages+item.imagen" alt="urlImages+item.imagen" class="w-100" id="img">
 					</div>
 					
@@ -140,7 +140,7 @@
                                 <div id="producto-opciones-piezas-contenedor">
                                     <span id="txt-w">Número de piezas:</span>
                                     <form id="frm-n">
-                                        <input type="number" min="1" value="1"  id="number">
+                                        <input type="number" min="1" value="1"  id="number" class="text-center">
                                     </form>
                                 </div>
                             </div>

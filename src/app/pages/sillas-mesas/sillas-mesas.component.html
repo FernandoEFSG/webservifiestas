@@ -3,7 +3,7 @@
 	<article class="container">
 		<div class="row d-flex align-items-center" id="titulo">
 			<div class="col-12 col-md-6 ">
-				<h1 class="title-hero">TENEMOS EL MÁS GRANDE CATALOGO DE SONIDO</h1>
+				<h1 class="title-hero">SILLAS Y MESAS</h1>
 			</div>
 		</div>
 	</article>
@@ -11,14 +11,12 @@
  
 
 <!-- CATEGPRÍAS -->
-<section class="py-5 bg-accesorios">
+<section class="bg-accesorios py-5">
 	<article class="container">
 		<div class="row">
-			
 			<div class="col-12 text-center" id="text-center">
 				<span class="texto-relleno">
-					Tenemos a la renta los mejores sonidos del mercado, 
-					ofrecemos los precios más accesibles.
+					Ofrecemos soluciones integrales e innovadoras para que su fiesta se convierta en una experiencia inolvidable para todos los presentes.
 				</span>
 				<div class="mt-4 ml-auto mr-auto">
 					<span class="texto-relleno">
@@ -27,11 +25,11 @@
 					<input type="date" name="" id="">
 				</div>
 			</div>
-		</div> 
+		</div>
 		<!--
-		<div class="text-center" id="orden">
-			<div >
-				<label id="label">Ordenar por:</label>
+		<div class="text-center filters-toolbar__item-wrapper">
+			<div class="filters-toolbar__item-child">
+				<label for="" id="lbl">Ordenar por:</label>
 				<select  (change)="selectOrden($event)"   name="select" id="combo">
 					<!-- <option value="value1">Destacados</option> --
 					<option value="ASC" selected>Alfabéticamente, A-Z</option>
@@ -41,33 +39,31 @@
 		</div>
 		-->
 		<div class="row">
-			<div class="col-6 col-md-4 mt-4" *ngFor="let sonido of Sonidos ">
-				<div class="p-0 card-hover-line h-100 card-body" id="card-sonido">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let inflable of inflables">
+				<div class="p-0 card-hover-line h-100 card-body">
 					<div class="bg-light container-img-light img-card h-100">
-						
-						<img  [src]="urlimg+sonido.imagen" [alt]="urlimg+sonido.imagen" class="w-100" id="img">
+						<img [src]="urlimg+inflable.imagen" alt="urlimg+inflable.imagen" class="w-100" id="img">
 					</div>
 					
-					<div class="row p-1 desc-1">
-						<div class="col-12  card-desc">
+					<div class="row p-1 desc-1" id="info">
+						<div class="col-12 my-5 card-desc">
+							
 							<p class="text-center font-400 text-relleno">
-								{{sonido.servicio}}
+								{{inflable.servicio}}
+							</p>
+							<p class="text-center precio">
+								$ {{inflable.precio_venta}}
 							</p>
 						</div>
-						<div class="row mt-1 p-3 card-name">
-							<div class="col-12 p-1" id="card-name">
-								<h4 class="font-700" id="categ">${{sonido.precio_venta}}</h4>
-							</div>
-						</div>
+						
 					</div>
-					<div class="mb-mt">
-						<div class="row p-1 card-mas" id="ver-mas">
-							<div class="col-12 text-center">
-								<a class="marcado"  (click)="agregar(sonido,'default')">APARTAR</a>
-							</div>
+					<div class="row p-1 card-mas mb-mt" id="ver-mas">
+						<div class="col-12 my-1 text-center" id="div-apa">
+							<a    class="marcado" >APARTAR</a>
 						</div>
 						<div class="col-12 text-center" id="ver-mas">
-							<button class="btn-hero-outline" (click)="verdetalles(sonido)" data-bs-toggle="modal" data-bs-target="#modal-product-images">Ver detalles</button>
+							<button class="btn-hero-outline"  data-bs-toggle="modal" data-bs-target="#modal-product-images">Ver detalles</button>
+							
 						</div> 
 					</div>
 				</div>
@@ -77,37 +73,40 @@
 </section>
 <!-- /CATEGPRÍAS -->
 
+<!-- Modal -->
 <div class="modal fade" id="modal-product-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="staticBackdropLabel">{{servicio.servicio}}</h4>
+                <h4 class="modal-title" id="staticBackdropLabel"></h4>
                 <button id="btn-x" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <article id="imagenes-producto">
                     <div id="slider">
-                        <div class="bg-container">
-							<div  [innerHTML]="sanitizer.bypassSecurityTrustHtml(video)"></div>
-
-                            <img *ngIf="video == ''" src="{{urlimg+servicio.img}}" alt="{{urlimg+servicio.img}}"
-                                class="bg">
+						<div class="bg-container">
+							<div  ></div>
+                            <img class="bg">
+								  <!-- <ul>
+									  <li>  <img [src]="urlimg+img">  </li>
+									  <li>  <img [src]="urlimg+img"> </li>
+									  <li>  <img [src]="urlimg+img"> </li>
+								  </ul> -->
                         </div>
                         <div class="product-info">
-                            
-                            <div id="producto-opciones">
+                            <div id="producto-opciones"> 
                                 <h5 class="text-center" id="detail">Detalles del producto</h5> <br>
-                                <p id="txt-w">PRECIO:</p><p class="text-center">{{servicio.precio_venta}}</p>
+                                <p id="txt-w">PRECIO:</p><p class="text-center"></p>
                                 <div id="producto-opciones-tallas-contenedor">
                                     <div id="producto-opciones-tallas">
 										<P id="txt-w">Descripcion:</P>
-                                        <p class="text-center">{{servicio.descripcion}}</p>
+                                        <p class="text-center"></p>
                                     </div>
                                 </div>
                                 <!-- <div id="producto-opciones-piezas-contenedor">
                                     <p id="txt-w">Número de piezas:</p>
-                                    <form [formGroup]="form" >
+                                    <form  [formGroup]="form">
                                         <input type="number" min="1" value="1" formControlName="cuantos" id="number">
                                     </form>
                                 </div> -->
@@ -118,9 +117,10 @@
             </div>
             <div class="modal-footer">
                 <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#msjCarrito" (click)="agregar(servicio,'default')">Agregar al carrito</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#msjCarrito" >Agregar al carrito</button>
             </div>
         </div>
     </div>
 </div>
+
 

@@ -3,7 +3,7 @@
 	<article class="container">
 		<div class="row d-flex align-items-center" id="titulo">
 			<div class="col-12 col-md-6">
-				<h1 class="title-hero">LOS MEJORES ACCESORIOS PARA TUS FIESTAS</h1>
+				<h1 class="title-hero text-center">LOS MEJORES ACCESORIOS PARA TUS FIESTAS</h1>
 			
 			</div>
 		</div>
@@ -97,8 +97,8 @@
 		-->	
 		<div class="row">
 			<div class="col-6 col-md-4 mt-4" *ngFor="let item of productos ">
-				<div class="p-0 card-hover-line h-100" id="card-pa">
-					<div class="bg-light container-img-light img-card">
+				<div class="p-0 card-hover-line h-100 card-body" id="card-pa">
+					<div class="bg-light container-img-light img-card h-100">
 						<!-- <img src="{{accesorio.img}}" alt="{{accesorio.img}}" class="w-100" id="img"> -->
 						<img [src]="urlimgproducto+item.imagen"  class="w-100" id="img">
 					</div>
@@ -118,7 +118,7 @@
                             </h4> 
 						</div>
 					</div>
-					<div class="row p-1 card-mas" id="card-btn">
+					<div class="row p-1 card-mas mb-mt" id="card-btn">
 						<div class="col-12 text-center" id="ver-mas">
 							<button class="btn-hero" (click)="agregar(item, 'default')" >Agregar al carrito</button>
 						</div>

@@ -20,17 +20,23 @@ const routes: Routes = [
   {
     path: 'personalizado',
     loadChildren: () =>
-      import('./pages/trab_personalizado/trab_personalizado.module').then((m) => m.PersonalizadoModule),
+      import('./pages/trab_personalizado/trab_personalizado.module').then(
+        (m) => m.PersonalizadoModule
+      ),
   },
   {
     path: 'accesorios',
     loadChildren: () =>
-      import('./pages/accesorios/accesorios.module').then((m) => m.AccesoriosModule),
+      import('./pages/accesorios/accesorios.module').then(
+        (m) => m.AccesoriosModule
+      ),
   },
   {
     path: 'inflables',
     loadChildren: () =>
-      import('./pages/inflables/inflables.module').then((m) => m.InflablesModule),
+      import('./pages/inflables/inflables.module').then(
+        (m) => m.InflablesModule
+      ),
   },
   {
     path: 'salones',
@@ -50,7 +56,16 @@ const routes: Routes = [
   {
     path: 'coctelería',
     loadChildren: () =>
-      import('./pages/coctelería/coctelería.module').then((m) => m.CocteleríaModule),
+      import('./pages/coctelería/coctelería.module').then(
+        (m) => m.CocteleríaModule
+      ),
+  },
+  {
+    path: 'sillas-mesas',
+    loadChildren: () =>
+      import('./pages/sillas-mesas/sillas-mesas.module').then(
+        (m) => m.SillasMesasModule
+      ),
   },
   {
     path: 'apartar/:id',
@@ -70,12 +85,16 @@ const routes: Routes = [
   {
     path: 'carrito-prod',
     loadChildren: () =>
-      import('./pages/carrito-productos/carrito.module').then((m) => m.CarritoModule),
+      import('./pages/carrito-productos/carrito.module').then(
+        (m) => m.CarritoModule
+      ),
   },
   {
     path: 'carrito-serv',
     loadChildren: () =>
-      import('./pages/carrito-servicios/carrito.module').then((m) => m.CarritoModule),
+      import('./pages/carrito-servicios/carrito.module').then(
+        (m) => m.CarritoModule
+      ),
   },
 
   {
@@ -84,14 +103,12 @@ const routes: Routes = [
       import('./pages/producto/producto.module').then((m) => m.ProductoModule),
   },
 
-  
   {
     path: 'comprobante/:id',
     loadChildren: () =>
       import('./pages/pdf/pdf.module').then((m) => m.PdfModule),
   },
 
-  
   {
     path: 'datos-personales',
     loadChildren: () =>
@@ -105,30 +122,25 @@ const routes: Routes = [
   },
 
   {
-  path: 'resumen-pago/:tipo',
+    path: 'resumen-pago/:tipo',
     loadChildren: () =>
-      import('./pages/resumen-pago/resumen-pago.module').then((m) => m.ResumenPagoModule),
+      import('./pages/resumen-pago/resumen-pago.module').then(
+        (m) => m.ResumenPagoModule
+      ),
   },
 
   {
-  path: 'cancel',
-      loadChildren: () =>
-        import('./pages/cancel/cancel.module').then((m) => m.CancelModule),
+    path: 'cancel',
+    loadChildren: () =>
+      import('./pages/cancel/cancel.module').then((m) => m.CancelModule),
   },
 
   {
     path: 'success',
-        loadChildren: () =>
-          import('./pages/success/success.module').then((m) => m.SuccessModule),
-    },
-
-
-
+    loadChildren: () =>
+      import('./pages/success/success.module').then((m) => m.SuccessModule),
+  },
   
-  
- 
-
-
 
   //PONER TODAS LAS RUTAS ARRIBA
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
@@ -137,11 +149,11 @@ const routes: Routes = [
 const options: ExtraOptions = {
   onSameUrlNavigation: 'reload',
   scrollPositionRestoration: 'enabled',
-  anchorScrolling: 'enabled'
-}
+  anchorScrolling: 'enabled',
+};
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,  options)],
+  imports: [RouterModule.forRoot(routes, options)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

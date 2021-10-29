@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     { img: './assets/imgs/inflable.jpg', name: 'Renta de inflables', desc: 'Somos tu mejor opción en Renta de inflables para niños renta de brincolines, renta de juegos infantiles y más. Solo nosotros te damos seguridad ¡Conócenos!', ruta:'/inflables'  },
     { img: './assets/imgs/sonido.png', name: 'Renta de sonido', desc: 'Renta de sonido e iluminación para todo tipo de eventos sociales, bodas, fiestas, xv años, etc. Bandas, mariachis y mucho más.', ruta:'/sonido'  },
     { img: './assets/imgs/fondo-salon.jpg', name: 'Salones', desc: '¡Conoce los salones que tenemos para hacer de tu event algo especial, lo que siempre soñaron!' , ruta:'/salones' },
-    { img: './assets/imgs/boda.jpeg', name: 'Arma tus paquetes', desc: 'Con nosotros puedes tener todo en tan solo unos clicks. ¡Desde los accesorios hasta el servicio de meseros!', ruta:'/personalizado'  },
+    { img: './assets/imgs/boda.jpg', name: 'Arma tus paquetes', desc: 'Con nosotros puedes tener todo en tan solo unos clicks. ¡Desde los accesorios hasta el servicio de meseros!', ruta:'/personalizado'  },
    ]
 
 
