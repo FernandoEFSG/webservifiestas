@@ -42,7 +42,7 @@
 		</div>
 		-->
 		<div class="row">
-			<div class="col-6 col-md-4 mt-4" *ngFor="let inflable of Inflables | paginate: { itemsPerPage: 4, currentPage: p }">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let inflable of Inflables | paginate: { itemsPerPage: 6, currentPage: p }">
 				<div class="p-0 card-hover-line h-100 card-body" id="card-in">
 					<div class="bg-light container-img-light img-card h-100">
 						<img [src]="urlimg+inflable.imagen" [alt]="urlimg+inflable.imagen" class="w-100" id="img">
