@@ -27,7 +27,7 @@ export class SalonesComponent implements OnInit {
   
   Salones: Servicios [] = [];
   salon: any = {};
-  
+  p: number = 1;
   condicion: number;
   servicio: any = {};
   orden: string = 'No'; 

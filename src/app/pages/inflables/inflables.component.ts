@@ -24,7 +24,7 @@ export class InflablesComponent implements OnInit {
     { img: './assets/imgs/inflables/inflable4.jfif', precio: '1235',  descripcion: 'Inflable t-rex con resbaladilla' },
 
   ]
-
+  p: number = 1;
   condicion: number;
   Inflables: Servicios [] = [];
   inflable: any = {};

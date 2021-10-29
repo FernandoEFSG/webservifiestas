@@ -41,7 +41,7 @@
 		</div>
 		-->
 		<div class="row">
-			<div class="col-6 col-md-4 mt-4" *ngFor="let sonido of Sonidos ">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let sonido of Sonidos | paginate: { itemsPerPage: 6, currentPage: p }">
 				<div class="p-0 card-hover-line h-100 card-body" id="card-sonido">
 					<div class="bg-light container-img-light img-card h-100">
 						
@@ -71,6 +71,10 @@
 						</div> 
 					</div>
 				</div>
+			</div>
+			
+			<div class="mt-4 text-center">
+				<pagination-controls (pageChange)="p = $event"></pagination-controls>
 			</div>
 		</div>
 	</article>

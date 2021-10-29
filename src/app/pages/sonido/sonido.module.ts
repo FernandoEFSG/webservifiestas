@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SonidoRoutingModule } from './sonido-routing.module';
 import { SonidoComponent } from './sonido.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 @NgModule({
   declarations: [SonidoComponent],
@@ -12,7 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     SonidoRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class SonidoModule { }

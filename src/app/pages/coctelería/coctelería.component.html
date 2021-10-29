@@ -28,7 +28,7 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-6 col-md-4 mt-4" *ngFor="let coctel of Cocteleria">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let coctel of Cocteleria | paginate: { itemsPerPage: 6, currentPage: p }">
 				<div class="p-0 card-hover-line h-100 card-body" id="card-co">
 					<div class="bg-light container-img-light img-card h-100">
 						<img [src]="urlimg+coctel.imagen" [alt]="urlimg+coctel.imagen" class="w-100" id="img">
@@ -56,6 +56,9 @@
 						</div> 
 					</div>
 				</div>
+			</div>
+			<div class="mt-4 text-center">
+				<pagination-controls (pageChange)="p = $event"></pagination-controls>
 			</div>
 		</div>
 	</article>

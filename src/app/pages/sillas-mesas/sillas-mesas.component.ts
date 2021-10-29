@@ -11,7 +11,7 @@ import { AlertsService } from '../../services/extras/alerts/alerts.service';
 })
 export class SillasMesasComponent implements OnInit {
 
-  
+  p: number = 1;
   inflables:any = [
     { img: './assets/imgs/salones/salon.jpg', precio: '1500', descripcion: 'Salon con grandes entradas de luz, con colores claros y estilo elegante' },
     { img: './assets/imgs/salones/salon1.jpg', precio: '1900',  descripcion: 'Salon con estilo antigüo, buena iluminacion, colores claros y elegante.' },

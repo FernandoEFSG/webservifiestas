@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SalonesRoutingModule } from './salones-routing.module';
 import { SalonesComponent } from './salones.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 
 @NgModule({
@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SalonesRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxPaginationModule
 
   ]
 })

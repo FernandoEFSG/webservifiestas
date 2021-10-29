@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { InflablesRoutingModule } from './inflables-routing.module';
 import { InflablesComponent } from './inflables.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     InflablesRoutingModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class InflablesModule { }

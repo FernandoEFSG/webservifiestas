@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AccesoriosRoutingModule } from './accesorios-routing.module';
 import { AccesoriosComponent } from './accesorios.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 
 @NgModule({
@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AccesoriosRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class AccesoriosModule { }

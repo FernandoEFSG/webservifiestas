@@ -31,7 +31,7 @@ export class PiñatasComponent implements OnInit {
     { img: './assets/imgs/piñatas/pinata.jpg', precio: '190',  descripcion: 'Piñata multicolor' },
     { img: './assets/imgs/piñatas/pinata3.jpg', precio: '145',  descripcion: 'Piñata de caperucita roja' },
   ]
-
+  p: number = 1;
   form!: FormGroup;
    candicion = 6;
    Pinatas: pinatas [] = [];

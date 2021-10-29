@@ -22,7 +22,7 @@ export class AccesoriosComponent implements OnInit {
    
   accesorios:any [] = [];
   form!: FormGroup;
-   
+  p: number = 1;
   candicion: number;
   Servicios: Servicios [] = [];
   servicio: any = {};

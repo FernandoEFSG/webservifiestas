@@ -22,6 +22,7 @@ export class CocteleríaComponent implements OnInit {
    ]
   urlimg = 'https://servifiestas.com.mx/punto_venta/assets/images/services/';
     
+   p: number = 1;
    Cocteleria: Servicios [] = [];
    coctel: any = {};
    condicion: number;

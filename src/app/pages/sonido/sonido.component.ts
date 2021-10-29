@@ -6,6 +6,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CarritoServiciosService } from '../../services/carrito-servcios/carrito-servicios.service';
 import { AlertsService } from '../../services/extras/alerts/alerts.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-home',
   templateUrl: './sonido.component.html',
@@ -22,7 +23,7 @@ export class SonidoComponent implements OnInit {
 
   // ]
 
-
+  p: number = 1;
   condicion: number;
   Sonidos: Servicios [] = [];
   servicio: any = {};

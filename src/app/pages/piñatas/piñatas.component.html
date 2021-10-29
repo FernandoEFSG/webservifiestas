@@ -73,7 +73,7 @@
 			</div>
 		-->
 		<div class="row">
-			<div class="col-6 col-md-4 mt-4" *ngFor="let item of Pinatas">
+			<div class="col-6 col-md-4 mt-4" *ngFor="let item of Pinatas | paginate: { itemsPerPage: 6, currentPage: p }">
 				<div class="p-0 card-hover-line h-100 card-body">
 					<div class="bg-light container-img-light img-card h-100">
 						<img [src]="urlImages+item.imagen" alt="urlImages+item.imagen" class="w-100" id="img">
@@ -101,7 +101,9 @@
 					</div>
 				</div>
 			</div>
-			
+			<div class="mt-4 text-center">
+				<pagination-controls (pageChange)="p = $event"></pagination-controls>
+			</div>
 		</div>
 	</article>
 </section>
