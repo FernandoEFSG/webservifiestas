@@ -50,11 +50,14 @@
           <img src="./assets/imgs/user2.svg" width="20" alt="" class="ico-nav">
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link">
-          <div class="btn-group" mdbDropdown>
+      <li class="nav-item nav-car">
+        <a class="nav-link nav-car">
+          <div class="btn-group nav-car" mdbDropdown>
+            
             <img src="./assets/imgs/carro.svg" width="20" alt="" mdbDropdownToggle class="ico-nav">
+            
             <span class="badge badge-pill bg-danger">{{cuantos}}</span>
+            
             <div class="dropdown-menu dropdown-menu-right dropdown-primary">
               <a class="dropdown-item" (click)="productos()" >Productos</a>
               <a class="dropdown-item"  (click)="servicios()"  >Apartados</a>

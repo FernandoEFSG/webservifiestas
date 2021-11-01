@@ -1,4 +1,23 @@
 
+/*.badge, .nav-car{
+	max-width: 1.5vw;
+    max-height: 1.5vw;
+    font-size: 1vw;
+}
+*/
+.nav-car{
+	max-width: 20px;
+	max-height: 20px;
+	font-size: 15px;
+}
+
+@media screen and (max-width: 700px){
+	.nav-car{
+		max-width: 20px;
+		max-height: 20px;
+		font-size: 15px;
+	}
+}
 .navbar ul {
 	display: flex;
 	padding: 0;

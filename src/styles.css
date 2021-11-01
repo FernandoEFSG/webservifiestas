@@ -287,11 +287,14 @@ a:hover {
 	}
 }
 
+
+
 @media (min-width: 2000px){
 	.container{
 		width: 85% !important;
 		max-width: 75%;
 	}
+	
 	li{
 		font-size: 1.5vw !important;
 	}
@@ -332,8 +335,6 @@ a:hover {
 	}
 
 }
-
-
 
 
 
